@@ -343,9 +343,9 @@ a.awilo_fn_circle_link:hover:after{
     min-height: 80px;
     align-items: center;
     padding: 0 2rem;
-	background-color:rgba(28,29,31,0.08);
-	-webkit-backdrop-filter: grayscale(20%) blur(0.5rem);
-	backdrop-filter: grayscale(20%) blur(0.5rem);
+	background-color:rgba(13,39,38,0.8);
+	-webkit-backdrop-filter: blur(0.5rem);
+	backdrop-filter:  blur(0.5rem);
 	border-radius:0 0 1rem 1rem;
 }
 
@@ -646,9 +646,10 @@ a.awilo_fn_circle_link:hover:after{
 	color: #00e3b2;
 }
 .awilo_fn_about .about_right{
-	width: 50%;
+	width: 72%;
 	position: relative;
 	margin: 0 auto;
+	z-index:1;
 }
 .awilo_fn_about .about_right img{
 	opacity: 0;
@@ -2387,17 +2388,12 @@ input.button-form:hover {
 }
 @media(max-width: 1250px){
 	.awilo_fn_about .about_in{
-		flex-direction: column;
-		background-image: url("../img/main-tablet.png");
-
+		flex-direction: row;
 	}
 	.awilo_fn_about .about_left{
-		width: 66.6%;
+		width: 50%;
 		padding-right: 0;
 		margin-bottom: 100px;
-	}
-	.awilo_fn_about .about_right img{
-		display:none;
 	}
 
 	#information{
@@ -2488,6 +2484,17 @@ input.button-form:hover {
 	}
 }
 
+@media(max-width: 880px){
+
+	.awilo_fn_about .about_right img{
+		display:none;
+	}
+
+	.awilo_fn_about .about_in{
+		background-image: url("../img/hero-1-m.png");
+		background-size:100% auto;
+	}
+}
 
 @media(max-width: 768px){
 	.awilo_fn_wrapper.opened .awilo_fn_content{
@@ -2524,11 +2531,6 @@ input.button-form:hover {
 
 	.awilo_fn_b2c ul li{
 		width: 100%;
-	}
-
-	.awilo_fn_about .about_in{
-		background-image: url("../img/main-mobile.png");
-		background-size:100% auto;
 	}
 
 	.awilo_fn_about .about_left{
