@@ -604,9 +604,12 @@ a.stitch_fn_circle_link:hover:after{
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 	text-decoration: none;
 	color: #00e3b2;
+	background-color:rgba(0, 228, 178,0.08);
+	backdrop-filter:blur(8px);
+	-webkit-backdrop-filter: blur(8px);
 	font-size: 1.25rem;
 	font-weight: 600;
-	border-radius: 0.5rem;
+	border-radius: 1rem;
 	max-width: 100%;
 	white-space: nowrap;
 	text-overflow: ellipsis;
@@ -647,8 +650,14 @@ a.stitch_fn_circle_link:hover:after{
 	opacity: 1;
 }
 .stitch_fn_hero1 .hero1_left .hero1_btn{
-	margin-bottom: 1.25rem;
+	margin-bottom: 4rem;
 }
+
+.stitch_fn_hero1 .hero1_menu{
+	margin-bottom:2rem;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+
 .stitch_fn_hero1 .hero1_menu ul{
 	list-style-type: none;
 	margin: 0;
@@ -657,8 +666,9 @@ a.stitch_fn_circle_link:hover:after{
 .stitch_fn_hero1 .hero1_menu p{
 	margin:0 ;
 	padding:0;
-	font-size:0.75rem;
-	color:#808AA0;
+	font-size:0.875;
+	font-weight:bold;
+	color:#DADDE3;
 }
 .stitch_fn_hero1 .hero1_menu ul li{
 	float: left;
@@ -684,26 +694,31 @@ a.stitch_fn_circle_link:hover:after{
 .stitch_fn_hero1 .hero1_menu a{
 	text-decoration: none;
 	color: #979fb1;
-	font-size: 1rem;
-	font-weight:600;
+	font-size: 1.25rem;
 	line-height: 24px;
+	font-weight:600;
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 	display: block;
-	transition: color .4s ease-in-out;
-	-webkit-transition: color .4s ease-in-out;
-	-moz-transition: color .4s ease-in-out;
-	-o-transition: color .4s ease-in-out;
-	-ms-transition: color .4s ease-in-out;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
 }
 .stitch_fn_hero1 .hero1_menu a:hover{
 	color: #00e3b2;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
 }
 
 .stitch_fn_hero1 .hero1_right{
 	width: 72%;
 	position: relative;
 	margin: 0 auto;
-	z-index:1;
+	z-index: 1;
 }
 .stitch_fn_hero1 .hero1_right img{
 	opacity: 0;
@@ -797,14 +812,15 @@ a.stitch_fn_circle_link:hover:after{
 	font-weight: 800;
 }
 
-.hero1_desc p{
+.stitch_fn_desc p{
 	margin: 0 0 4rem 0;
 	padding: 0;
 	font-size: 1.25rem;
 	font-weight: 400;
 	line-height: 1.5;
-	color: #C4C8D3;
-	font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	color: #DADDE3;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
 }
 
 /*---------------------------------------------------*/
@@ -1204,7 +1220,7 @@ a.stitch_fn_circle_link:hover:after{
 	background-color: #1C1D1F;
 }
 #hero2{
-	padding: 4rem 0;
+	padding: 6rem 0;
 	background-color: #1C1D1F;
 }
 
@@ -2335,12 +2351,14 @@ input.button-form:hover {
 	}
 	.stitch_fn_hero1 .hero1_left{
 		width: 50%;
-
 	}
 }
 @media(max-width: 1250px){
 	.stitch_fn_hero1 .hero1_in{
 		flex-direction: row;
+	}
+	.stitch_fn_hero1 .hero1_left{
+		width: 72%;
 	}
 	#information{
 		padding: 93px 0 80px 0;
@@ -2432,6 +2450,9 @@ input.button-form:hover {
 	.stitch_fn_hero1 .hero1_in{
 		background-image: url("../img/hero-1-m.png");
 		background-size: contain;
+		width:100%;
+		height:auto;
+		border-radius:1rem;
 	}
 }
 
@@ -2460,10 +2481,6 @@ input.button-form:hover {
 		right: -100%;
 	}
 
-	.stitch_fn_hero1 .hero1_left .hero1_desc p{
-		font-size: 1rem;
-	}
-
 	.stitch_fn_info_list li{
 		width: 100%;
 	}
@@ -2472,9 +2489,6 @@ input.button-form:hover {
 		width: 100%;
 	}
 
-	.stitch_fn_hero1 .hero1_left{
-		width: 64%;
-	}
 	.stitch_fn_hero1 .hero1_right{
 		width:0%;
 	}
@@ -2510,8 +2524,7 @@ input.button-form:hover {
 	}
 }
 
-
-@media(max-width: 560px){
+@media(max-width: 570px){
 	.stitch_fn_hero1 .hero1_left{
 		width: 100%;
 	}
