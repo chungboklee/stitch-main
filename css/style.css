@@ -2531,6 +2531,16 @@ input.button-form:hover {
 }
 
 @media(max-width: 480px){
+	.stitch_fn_header .logo img {
+		height:2 rem;
+		width:auto;
+	}
+	.nav-btn a{
+		padding:0.5rem 1rem;
+		font-size: 0.875rem;
+		font-weight:bold;
+		border-radius:0.5rem;
+	}
 	.stitch_fn_hero1 .hero1_in{
 		background-size:100% auto; 
 	}
