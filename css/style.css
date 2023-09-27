@@ -354,7 +354,7 @@ a.stitch_fn_circle_link:hover:after{
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#14463a",endColorstr="#0d2726",GradientType=1);
 	-webkit-backdrop-filter: blur(0.5rem);
 	backdrop-filter: blur(0.5rem);
-	border: 0.2px solid rgba(20,70,58,1);
+	border: 1px solid rgba(20,70,58,1);
 	border-top: none!important;
 	border-radius: 0 0 1rem 1rem;
 	box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
@@ -738,11 +738,11 @@ a.stitch_fn_circle_link:hover:after{
 	z-index: 5;
 }
 .stitch_fn_hero1 .hero1_right .hero1_img .stitch_fn_abs_img{
-	left: 30px;
-	right: 30px;
-	top: 30px;
-	bottom: 30px;
-	border-radius: 15px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border-radius: 1rem;
 	overflow: hidden;
 }
 .stitch_fn_hero1 .hero1_right .hero1_border:after{
@@ -778,7 +778,7 @@ a.stitch_fn_circle_link:hover:after{
 	width: 100%;
 	position: relative;
 	height: 1px;
-	background-color: rgba(255,255,255,.05);
+	background-color: #383e4b;
 	float: left;
 	clear: both;
 }
@@ -956,9 +956,9 @@ a.stitch_fn_circle_link:hover:after{
 	padding: 0;
 	list-style-type: none;
 	width: 33.3333%;
-	padding-left: 30px;
-	padding-top: 16px;
-	margin-bottom: 30px;
+	padding-left: 2rem;
+	padding-top: 1rem;
+	margin-bottom: 2rem;
 }
 .stitch_fn_hero2 .s_item{
 	width: 100%;
@@ -966,6 +966,7 @@ a.stitch_fn_circle_link:hover:after{
 	clear: both;
 	height: 100%;
 	border-radius: 0.5rem;
+	border: 1px solid rgba(20,70,58,1);	
 	padding: 5rem 2.5rem 20rem 2.5rem;
 	position: relative;
 	transition: all .3s ease;
@@ -973,7 +974,7 @@ a.stitch_fn_circle_link:hover:after{
 
 .stitch_fn_hero2 .s_item:hover{
 	background-size:108%!important;	
-	transform: translate3d(0px,-5px,0px);
+	transform: translate3d(0px,-0.5rem,0px);
 }
 .stitch_fn_hero2 .s_item .s_counter{
 	width: 50px;
@@ -2399,24 +2400,24 @@ input.button-form:hover {
 
 }
 
-@media(max-width: 960px){
+@media(max-width: 900px){
 	.stitch_fn_hero1 .hero1_left{
-		width:80%;
+		width:50%;
 	}
 	.stitch_fn_hero1 .hero1_right{
-		width:20%;
+		width:50%;
+		display:flex;
+		align-items: center;
 	}
-
-	.stitch_fn_hero1 .hero1_right img{
-		display:none;
+	.stitch_fn_hero1 .hero1_right .hero1_img {
+	    width:100%;
+		height:100%;
+		padding:0;
 	}
-
-	.stitch_fn_hero1 .hero1_in{
-		background-image: url("../img/hero-1-m.png");
-		background-size: contain;
-		width:100%;
-		height:auto;
-		border-radius:1rem;
+	.hero1_border {
+		width:120%;
+		height:120%;
+		padding:0;
 	}
 }
 
@@ -2443,6 +2444,23 @@ input.button-form:hover {
 	.stitch_fn_sidebar_header{
 		width: 100%;
 		right: -100%;
+	}
+	.stitch_fn_hero1 .hero1_left {
+		width: 80%;
+	}
+	.stitch_fn_hero1 .hero1_right {
+		width:20%;
+	}
+	.stitch_fn_hero1 .hero1_right img{
+		display:none;
+	}
+
+	.stitch_fn_hero1 .hero1_in{
+		background-image: url("../img/hero-1-m.png");
+		background-size: contain;
+		width:100%;
+		height:auto;
+		border-radius:1rem;
 	}
 
 	.stitch_fn_info_list li{
@@ -2482,7 +2500,8 @@ input.button-form:hover {
 		padding: 4rem 2rem 25rem 2rem;
 	}
 }
-
+@media(max-width: 640px){
+}
 @media(max-width: 480px){
 	
 	.stitch_fn_header .logo img {
