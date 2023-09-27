@@ -582,7 +582,7 @@ a.stitch_fn_circle_link:hover:after{
 	background-repeat:no-repeat;
 }
 .stitch_fn_hero1 .hero1_left{
-	width: 50%;
+	width: 40%;
 }
 .stitch_fn_hero1 .hero1_left .l_inner{
 	width: 100%;
@@ -715,7 +715,7 @@ a.stitch_fn_circle_link:hover:after{
 }
 
 .stitch_fn_hero1 .hero1_right{
-	width: 72%;
+	width: 60%;
 	position: relative;
 	margin: 0 auto;
 	z-index: 1;
@@ -2349,17 +2349,12 @@ input.button-form:hover {
 		padding: 0 2rem;
 		margin: 0 auto;
 	}
-	.stitch_fn_hero1 .hero1_left{
-		width: 50%;
-	}
 }
 @media(max-width: 1250px){
 	.stitch_fn_hero1 .hero1_in{
 		flex-direction: row;
 	}
-	.stitch_fn_hero1 .hero1_left{
-		width: 72%;
-	}
+
 	#information{
 		padding: 93px 0 80px 0;
 	}
@@ -2401,47 +2396,16 @@ input.button-form:hover {
 	.stitch_fn_totop{
 		right: 10px;
 	}
-	.stitch_fn_title_yellow h5{
-		font-size: 1.75rem;
-		line-height: 1.25;
-	}
-	.stitch_fn_hero1 .hero1_left h3,
-	.stitch_fn_title_yellow h3{
-		font-size: 2.25rem;
-		line-height: 1.25;
-	}
-	.stitch_fn_title_blue h5{
-		font-size: 1.75rem;
-		line-height: 1.25;
-	}
-	.stitch_fn_title_blue h3{
-		font-size: 2.25rem;
-		line-height: 1.25;
-	}
-	.stitch_fn_title_red h5{
-		font-size: 1.75rem;
-		line-height: 1.25;
-	}
-	.stitch_fn_title_red h3{
-		font-size: 2.25rem;
-		line-height: 1.25;
-	}
-	.stitch_fn_title_green h5{
-		font-size: 1.75rem;
-		line-height: 1.25;
-	}
-	.stitch_fn_title_green h3{
-		font-size: 2.25rem;
-		line-height: 1.25;
-	}
-	.stitch_fn_big_text h3{
-		font-size: 2.25rem;
-		line-height: 1.25;
-	}
 
 }
 
-@media(max-width: 880px){
+@media(max-width: 960px){
+	.stitch_fn_hero1 .hero1_left{
+		width:80%;
+	}
+	.stitch_fn_hero1 .hero1_right{
+		width:20%;
+	}
 
 	.stitch_fn_hero1 .hero1_right img{
 		display:none;
@@ -2488,11 +2452,6 @@ input.button-form:hover {
 	.stitch_fn_b2c ul li{
 		width: 100%;
 	}
-
-	.stitch_fn_hero1 .hero1_right{
-		width:0%;
-	}
-
 	.stitch_fn_blog_list .blog_item{
 		padding: 30px 0;
 	}
@@ -2524,22 +2483,55 @@ input.button-form:hover {
 	}
 }
 
-@media(max-width: 570px){
-	.stitch_fn_hero1 .hero1_left{
-		width: 100%;
-	}
-}
-
 @media(max-width: 480px){
+	
 	.stitch_fn_header .logo img {
-		height:2 rem;
+		height:2rem;
 		width:auto;
 	}
+		
 	.nav-btn a{
 		padding:0.5rem 1rem;
 		font-size: 0.875rem;
 		font-weight:bold;
 		border-radius:0.5rem;
+	}
+	
+	.stitch_fn_title h5{
+		margin: 0 0 0.25rem 0;
+		padding: 0;
+		font-size: 1rem;
+	}
+	
+	.stitch_fn_title h3{
+		margin: 0 0 2rem 0;
+		padding: 0;
+		font-size: 2rem;
+	}
+	
+	.stitch_fn_desc p{
+		margin: 0 0 6rem 0;
+		padding: 0;
+		font-size: 1.25rem;
+	}
+	.stitch_fn_hero1 .hero1_menu p{
+		margin:0 0 0.25rem 0;
+
+		font-size:0.875rem;
+	}
+	.stitch_fn_hero1 .hero1_menu a{
+		text-decoration: none;
+		color: #979fb1;
+		font-size: 1rem;
+		line-height: 24px;
+		font-weight:600;
+		font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+		display: block;
+		transition: all .2s ease-in-out;
+		-webkit-transition: all .2s ease-in-out;
+		-moz-transition: all .2s ease-in-out;
+		-o-transition: all .2s ease-in-out;
+		-ms-transition: all .2s ease-in-out;
 	}
 	.stitch_fn_hero1 .hero1_in{
 		background-size:100% auto; 
