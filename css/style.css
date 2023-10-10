@@ -24,7 +24,7 @@ html {
 body{
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;	
 	line-height: 1.25;
-	letter-spacing: -0.2px;
+	letter-spacing: -0.25px;
 	word-wrap: break-word;
 	font-weight: 400;
 	background-color: rgb(28,29,31);
@@ -45,6 +45,9 @@ body{
 }
 .color-stitchgray{
 	color: #979fb1!important;
+}
+.color-stitchgray-dark{
+	color: #6B768E!important;
 }
 
 .stitch_fn_svg{
@@ -575,15 +578,21 @@ a.stitch_fn_circle_link:hover:after{
 }
 
 /*---------------------------------------------------*/
-/*	03) Shortcode: hero1
+/*	hero1
 /*---------------------------------------------------*/
-.stitch_fn_hero1{
+#hero1 {
+	padding: 160px 0 80px 0;
+	background: rgb(28,29,31,1);
+	background: linear-gradient(0deg, rgba(28,29,31,1) 0%, rgba(29,100,84,1) 100%);
+}
+
+.stitch_fn_hero1 {
 	width: 100%;
 	float: left;
 	clear: both;
 }
 
-.stitch_fn_hero1 .hero1_in{
+.stitch_fn_hero1 .hero1_in {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -592,10 +601,10 @@ a.stitch_fn_circle_link:hover:after{
 	background-position:right bottom; 
 	background-repeat:no-repeat;
 }
-.stitch_fn_hero1 .hero1_left{
+.stitch_fn_hero1 .hero1_left {
 	width: 40%;
 }
-.stitch_fn_hero1 .hero1_left .l_inner{
+.stitch_fn_hero1 .hero1_left .l_inner {
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -603,7 +612,214 @@ a.stitch_fn_circle_link:hover:after{
 	justify-content: center;
 }
 
-.stitch_fn_wrapper .stitch_fn_main_button{
+.stitch_fn_hero1 .hero1_left .hero5_btn {
+	margin-bottom: 4rem;
+}
+
+.stitch_fn_hero1 .hero1_menu {
+	margin-bottom:2rem;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+
+.stitch_fn_hero1 .hero1_menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.stitch_fn_hero1 .hero1_menu p {
+	margin:0 ;
+	padding:0;
+	font-size:0.875;
+	font-weight:bold;
+	color:#DADDE3;
+}
+.stitch_fn_hero1 .hero1_menu ul li {
+	float: left;
+	position: relative;
+	margin-right: 1.75rem;
+}
+.stitch_fn_hero1 .hero1_menu ul li:after {
+	width: 0.75rem;
+	height: 1px;
+	background-color: #5A6378;
+	position: absolute;
+	left: 100%;
+	margin-left: 0.5rem;
+	content: '';
+	top: 50%;
+}
+.stitch_fn_hero1 .hero1_menu ul li:last-child {
+	margin-right: 0;
+}
+.stitch_fn_hero1 .hero1_menu ul li:last-child:after {
+	display: none;
+}
+.stitch_fn_hero1 .hero1_menu a {
+	text-decoration: none;
+	color: #979fb1;
+	font-size: 1.25rem;
+	line-height: 24px;
+	font-weight:600;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	display: block;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+}
+.stitch_fn_hero1 .hero1_menu a:hover {
+	color: #00e3b2;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+}
+
+.stitch_fn_hero1 .hero1_right {
+	width: 60%;
+	position: relative;
+	margin: 0 auto;
+	z-index: 1;
+}
+
+.stitch_fn_hero1 .hero1_right img {
+	opacity: 0;
+	min-width: 100%;
+}
+
+.stitch_fn_hero1 .hero1_right .hero1_border {
+	padding: 30px;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.stitch_fn_hero1 .hero1_right .hero1_img {
+	padding: 30px;
+	width: 100%;
+	position: relative;
+	z-index: 5;
+}
+
+.stitch_fn_hero1 .hero1_right .hero1_img .stitch_fn_abs_img {
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+.stitch_fn_hero1 .hero1_right .hero1_border:after {
+	content: '';
+	position: absolute;
+	width: 30%;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	bottom: 0;
+}
+
+.stitch_fn_hero1 .hero1_right .hero1_border:before {
+	content: '';
+	position: absolute;
+	width: 30%;
+	top: 0;
+	right: 0;
+	background-color: transparent;
+	bottom: 0;
+}
+
+.hero1_btn {
+	margin-bottom: 2rem;
+}
+
+
+#flip {
+	height:72px;
+	overflow:hidden;
+  }
+  
+  #flip > div > div {
+	height:100%;
+	margin-bottom:42px;
+	display:inline-block;
+	line-height:1;
+  }
+  
+  #flip div:first-child {
+	animation: show 5s linear infinite;
+  }
+  
+  #flip div div {
+	background:#0B2721;
+	border:1px solid #0B2721;
+	border-radius:0.5rem;
+	padding: 0.75rem 0.5rem;
+  }
+
+  #flip div:first-child div {
+  }
+
+
+  #flip div:nth-child(2) div {
+	margin-bottom: 34px;
+  }
+  #flip div:last-child div {
+	margin-top:-2rem;
+	
+  }
+  
+  @keyframes show {
+	0% {margin-top:-270px;}
+	5% {margin-top:-180px;}
+	33% {margin-top:-180px;}
+	38% {margin-top:-90px;}
+	66% {margin-top:-90px;}
+	71% {margin-top:0px;}
+	99.99% {margin-top:0px;}
+	100% {margin-top:-270px;}
+  }
+
+/*---------------------------------------------------*/
+/*	hero5
+/*---------------------------------------------------*/
+#hero5 {
+	padding: 160px 0 80px 0;
+	background: rgb(29,100,84,1);
+	background: linear-gradient(0deg, rgba(29,100,84,1) 0%, rgba(28,29,31,1) 100%);
+}
+
+.stitch_fn_hero5 {
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+.stitch_fn_hero5 .hero5_in {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	background-image: none;
+	background-size:auto 100%; 
+	background-position:right bottom; 
+	background-repeat:no-repeat;
+}
+.stitch_fn_hero5 .hero5_left {
+	width: 40%;
+}
+.stitch_fn_hero5 .hero5_left .l_inner {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.stitch_fn_wrapper .stitch_fn_main_button {
 	margin: 0;
 	padding: 0;
 	outline-color: transparent;
@@ -629,10 +845,10 @@ a.stitch_fn_circle_link:hover:after{
 	perspective: 1000px;
     transform: translateZ(0px);
 }
-.stitch_fn_wrapper .stitch_fn_main_button:hover{
+.stitch_fn_wrapper .stitch_fn_main_button:hover {
 	border-color: transparent;
 }
-.stitch_fn_wrapper .stitch_fn_main_button span{
+.stitch_fn_wrapper .stitch_fn_main_button span {
 	line-height: 1.25;
 	display: block;
 	transition: all .2s ease;
@@ -641,52 +857,52 @@ a.stitch_fn_circle_link:hover:after{
 	border: 2px solid #00e3b2;
 	border-radius: 1rem;
 }
-.stitch_fn_wrapper .stitch_fn_main_button span:nth-child(1){
+.stitch_fn_wrapper .stitch_fn_main_button span:nth-child(1) {
 	transition: all .2s .2s ease;
 }
-.stitch_fn_wrapper .stitch_fn_main_button span:nth-child(2){
+.stitch_fn_wrapper .stitch_fn_main_button span:nth-child(2) {
 	opacity: 0;
 	transform: scale(0.96);
 	position: absolute;
 	top: 0;
 }
-.stitch_fn_wrapper .stitch_fn_main_button:hover span:nth-child(1){
+.stitch_fn_wrapper .stitch_fn_main_button:hover span:nth-child(1) {
 	opacity: 0;
 	transform: scale(.96);
 	transition: all .1s ease;
 }
-.stitch_fn_wrapper .stitch_fn_main_button:hover span:nth-child(2){
+.stitch_fn_wrapper .stitch_fn_main_button:hover span:nth-child(2) {
 	transform: scale(1) translateZ(0);
 	transition: all .1s .1s ease;
 	opacity: 1;
 }
-.stitch_fn_hero1 .hero1_left .hero1_btn{
+.stitch_fn_hero5 .hero5_left .hero5_btn {
 	margin-bottom: 4rem;
 }
 
-.stitch_fn_hero1 .hero1_menu{
+.stitch_fn_hero5 .hero5_menu {
 	margin-bottom:2rem;
 	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
 }
 
-.stitch_fn_hero1 .hero1_menu ul{
+.stitch_fn_hero5 .hero5_menu ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
-.stitch_fn_hero1 .hero1_menu p{
+.stitch_fn_hero5 .hero5_menu p {
 	margin:0 ;
 	padding:0;
 	font-size:0.875;
 	font-weight:bold;
 	color:#DADDE3;
 }
-.stitch_fn_hero1 .hero1_menu ul li{
+.stitch_fn_hero5 .hero5_menu ul li {
 	float: left;
 	position: relative;
 	margin-right: 1.75rem;
 }
-.stitch_fn_hero1 .hero1_menu ul li:after{
+.stitch_fn_hero5 .hero5_menu ul li:after {
 	width: 0.75rem;
 	height: 1px;
 	background-color: #5A6378;
@@ -696,13 +912,13 @@ a.stitch_fn_circle_link:hover:after{
 	content: '';
 	top: 50%;
 }
-.stitch_fn_hero1 .hero1_menu ul li:last-child{
+.stitch_fn_hero5 .hero5_menu ul li:last-child {
 	margin-right: 0;
 }
-.stitch_fn_hero1 .hero1_menu ul li:last-child:after{
+.stitch_fn_hero5 .hero5_menu ul li:last-child:after {
 	display: none;
 }
-.stitch_fn_hero1 .hero1_menu a{
+.stitch_fn_hero5 .hero5_menu a {
 	text-decoration: none;
 	color: #979fb1;
 	font-size: 1.25rem;
@@ -716,7 +932,7 @@ a.stitch_fn_circle_link:hover:after{
 	-o-transition: all .2s ease-in-out;
 	-ms-transition: all .2s ease-in-out;
 }
-.stitch_fn_hero1 .hero1_menu a:hover{
+.stitch_fn_hero5 .hero5_menu a:hover {
 	color: #00e3b2;
 	transition: all .2s ease-in-out;
 	-webkit-transition: all .2s ease-in-out;
@@ -725,30 +941,34 @@ a.stitch_fn_circle_link:hover:after{
 	-ms-transition: all .2s ease-in-out;
 }
 
-.stitch_fn_hero1 .hero1_right{
+.stitch_fn_hero5 .hero5_right {
 	width: 60%;
 	position: relative;
 	margin: 0 auto;
 	z-index: 1;
 }
-.stitch_fn_hero1 .hero1_right img{
+
+.stitch_fn_hero5 .hero5_right img {
 	opacity: 0;
 	min-width: 100%;
 }
-.stitch_fn_hero1 .hero1_right .hero1_border{
+
+.stitch_fn_hero5 .hero5_right .hero5_border {
 	padding: 30px;
 	position: absolute;
 	width: 100%;
 	top: 0;
 	left: 0;
 }
-.stitch_fn_hero1 .hero1_right .hero1_img{
+
+.stitch_fn_hero5 .hero5_right .hero5_img {
 	padding: 30px;
 	width: 100%;
 	position: relative;
 	z-index: 5;
 }
-.stitch_fn_hero1 .hero1_right .hero1_img .stitch_fn_abs_img{
+
+.stitch_fn_hero5 .hero5_right .hero5_img .stitch_fn_abs_img {
 	left: 0;
 	right: 0;
 	top: 0;
@@ -756,7 +976,8 @@ a.stitch_fn_circle_link:hover:after{
 	border-radius: 1rem;
 	overflow: hidden;
 }
-.stitch_fn_hero1 .hero1_right .hero1_border:after{
+
+.stitch_fn_hero5 .hero5_right .hero5_border:after {
 	content: '';
 	position: absolute;
 	width: 30%;
@@ -765,7 +986,8 @@ a.stitch_fn_circle_link:hover:after{
 	background-color: transparent;
 	bottom: 0;
 }
-.stitch_fn_hero1 .hero1_right .hero1_border:before{
+
+.stitch_fn_hero5 .hero5_right .hero5_border:before {
 	content: '';
 	position: absolute;
 	width: 30%;
@@ -774,48 +996,6 @@ a.stitch_fn_circle_link:hover:after{
 	background-color: transparent;
 	bottom: 0;
 }
-#hero1{
-	padding: 160px 0 80px 0;
-	background: rgb(28,29,31);
-	background: linear-gradient(0deg, rgba(28,29,31,1) 0%, rgba(29,100,84,1) 100%);
-}
-
-#flip {
-	height:48px;
-	margin-top:0.25rem;
-	overflow:hidden;
-  }
-  
-  #flip > div > div {
-	padding:0;
-	line-height:1.25;
-	height: 40px;
-	margin-bottom:48px;
-	display:inline-block;
-  }
-  
-  #flip div:first-child {
-	animation: show 8s linear infinite;
-  }
-  
-  #flip div div {
-	
-  }
-  #flip div:first-child div {
-  }
-  #flip div:last-child div {
-  }
-  
-  @keyframes show {
-	0% {margin-top:-270px;}
-	5% {margin-top:-180px;}
-	33% {margin-top:-180px;}
-	38% {margin-top:-90px;}
-	66% {margin-top:-90px;}
-	71% {margin-top:0px;}
-	99.99% {margin-top:0px;}
-	100% {margin-top:-270px;}
-  }
 
 
 /*---------------------------------------------------*/
@@ -895,9 +1075,9 @@ a.stitch_fn_circle_link:hover:after{
 	padding: 0;
 	list-style-type: none;
 	width: 25%;
-	padding-left: 30px;
-	padding-top: 16px;
-	margin-bottom: 30px;
+	padding-left: 2rem;
+	padding-top: 1rem;
+	margin-bottom: 2rem;
 }
 
 .stitch_fn_hero4 .s_item{
@@ -920,11 +1100,11 @@ a.stitch_fn_circle_link:hover:after{
 	border: 2px solid rgba(0, 228, 178,0.8);
 	background: #27292E;
 	box-shadow: 0px 0px 1rem rgba(0,228,178,0.32);
-	transform: scale(1.08);
-	-webkit-transform: scale(1.08); /* 크롬, 사파리 */
-	-moz-transform: scale(1.08);  /* 파이어폭스 */
-	-ms-transform: scale(1.08); /* IE */
-	-o-transform: scale(1.08);  /* 오페라 */
+	transform: scale(1.04);
+	-webkit-transform: scale(1.04); /* 크롬, 사파리 */
+	-moz-transform: scale(1.04);  /* 파이어폭스 */
+	-ms-transform: scale(1.04); /* IE */
+	-o-transform: scale(1.04);  /* 오페라 */
 	z-index:6;
 }
 
@@ -945,7 +1125,7 @@ a.stitch_fn_circle_link:hover:after{
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 	color: #f7f8f9;
 	font-size: 1.5rem;
-	line-height:1.5;
+	line-height:1.25;
 	letter-spacing: 0;
 	font-weight: 600;
 	margin-bottom: 0.5rem;
@@ -956,7 +1136,7 @@ a.stitch_fn_circle_link:hover:after{
 	font-size: 1rem;
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 	font-weight: 600;
-	line-height: 1.5;
+	line-height: 1.25;
 	letter-spacing: 0;
 	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
 }
@@ -965,7 +1145,7 @@ a.stitch_fn_circle_link:hover:after{
 	margin-bottom: 1.25rem;
 }
 
-.stitch_fn_hero4 .s_item .s_desc span {
+.stitch_fn_hero4 .s_item .s_desc span.on {
 	width: 0.5rem;
 	height: 0.5rem;
 	display: inline-block;
@@ -974,6 +1154,14 @@ a.stitch_fn_circle_link:hover:after{
 	margin-right:0.25rem;
 }
 
+.stitch_fn_hero4 .s_item .s_desc span.off {
+	width: 0.5rem;
+	height: 0.5rem;
+	display: inline-block;
+	background-color: #5A6378;
+	border-radius:0.5rem;
+	margin-right:0.25rem;
+}
 
 .stitch_fn_hero4 .s_item_next{
 	width: 100%;
@@ -989,6 +1177,8 @@ a.stitch_fn_circle_link:hover:after{
 	transition: all .3s ease;
 	display:flex;
 	flex-direction:column;
+	-ms-flex-direction: column;
+	justify-content: flex-start;
 }
 
 .stitch_fn_hero4 .s_item_next:hover{
@@ -1009,7 +1199,7 @@ a.stitch_fn_circle_link:hover:after{
 	margin: 0;
 	padding: 0;
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-	color: #f7f8f9;
+	color: #979fb1;
 	font-size: 2rem;
 	letter-spacing: 0;
 	font-weight: 600;
@@ -1065,6 +1255,7 @@ a.stitch_fn_circle_link:hover:after{
 	padding-top: 1rem;
 	margin-bottom: 2rem;
 }
+
 .s_item{
 	width: 100%;
 	float: left;
@@ -1085,7 +1276,7 @@ a.stitch_fn_circle_link:hover:after{
 	background-size:102% auto!important;
 	background-color: #0e322a;
 	box-shadow: 0 1rem 1rem rgba(0,0,0,0.32);
-	transform: translate3d(0px,-0.5rem,0px);
+	transform: translate3d(0px,-0.4px,0px);
 }
 
 .s_item .s_title{
@@ -1139,7 +1330,6 @@ a.stitch_fn_circle_link:hover:after{
 	justify-content:center;
 }
 
-
 .s_btn a {
 	margin:0 1rem;
 	width:100%;
@@ -1175,7 +1365,6 @@ a.stitch_fn_circle_link:hover:after{
 	background: -webkit-linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
 	background: linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#14463a",endColorstr="#0d2726",GradientType=1);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#185547",endColorstr="#185547",GradientType=1);
 	box-shadow:0px 4px 8px rgba(0, 0, 0, 0.2);
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
@@ -1184,7 +1373,6 @@ a.stitch_fn_circle_link:hover:after{
 	transition: all .3s ease-in-out;
 	transform: translate3d(0px,-0.4px,0px);
 }
-
 
 .s_btn_neutral {
 	position:absolute;
@@ -1196,7 +1384,6 @@ a.stitch_fn_circle_link:hover:after{
 	text-align:center;
 	justify-content:center;
 }
-
 
 .s_btn_neutral a {
 	margin:0 1rem;
@@ -1240,6 +1427,115 @@ a.stitch_fn_circle_link:hover:after{
 	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
 	transform: translate3d(0px,-0.4px,0px);
 }
+
+.stitch_fn_hero3 {
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+.swiper-container-wrapper--timeline .swiper-slide {
+	display: flex;
+	background: #26282C;
+	min-height: 20rem;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1rem;
+  }
+  .swiper-container-wrapper--timeline .swiper-slide .container {
+	padding: 0;
+	width: 100%;
+  }
+  .swiper-container-wrapper--timeline .swiper-slide .title {
+	font-size: 1.25rem;
+	opacity: 0;
+	transition: 0.5s ease 0.5s;
+  }
+  .swiper-container-wrapper--timeline .swiper-slide-active .title {
+	opacity: 1;
+  }
+  .swiper-container-wrapper--timeline .swiper-pagination-progressbar {
+	position: relative;
+	margin-bottom: 2rem;
+	background-color: transparent;
+	height: 4px;
+	border-bottom: 1px solid #383e4b;
+	width: 75%;
+  }
+  .swiper-container-wrapper--timeline .swiper-pagination-progressbar-fill {
+	background-color: #00e3b2;
+	height: 2px;
+	top: 2px;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom {
+	position: relative;
+	list-style: none;
+	margin: 1rem 0;
+	padding: 0;
+	display: flex;
+	line-height: 1.25;
+	bottom: 0;
+	z-index: 11;
+	width: 75%;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch {
+	position: relative;
+	width: 100%;
+	height: 0.875rem;
+	line-height: 0.875rem;
+	display: block;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch .switch-title {
+	position: absolute;
+	right: 0;
+	transform: translateX(50%);
+	transition: 0.2s all ease-in-out;
+	transition-delay: 0s;
+	cursor: pointer;
+	z-index: 1;
+	font-weight:600;
+	color:#979fb1;
+}
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch .switch-title:after {
+	position: absolute;
+	top: calc(100% + 19px);
+	right: 50%;
+	transform: translateX(50%) translateY(-50%);
+	width: 12px;
+	height: 12px;
+	background: #00e3b2;
+	border-radius: 2rem;
+	content: "";
+	transition: 0.2s all ease-in-out;
+	transition-delay: 0s;
+	z-index: 1;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch.active .switch-title {
+	font-weight: 600;
+	transition-delay: 0.4s;
+	color:#00e3b2;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch.active .switch-title:after {
+	background: #00e3b2;
+	width: 1rem;
+	height: 1rem;
+	transition-delay: 0.4s;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch.active ~ .swiper-pagination-switch .switch-title {
+	color: #5A6378;
+	font-weight: 600;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch.active ~ .swiper-pagination-switch .switch-title:after {
+	background: #383e4b;
+  }
 
 #project .stitch_fn_b2c {
 	margin-bottom: 100px;
@@ -2206,9 +2502,12 @@ input.button-form:hover {
 	width: 100%;
 	float: left;
 	clear: both;
-	padding: 211px 0;
-	background: rgb(0,0,0);
-	background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgb(14,31,73) 100%);
+	padding: 12.5rem 0;
+	background: rgb(38,40,44);
+	background: -moz-linear-gradient(0deg, rgba(38,40,44,1) 0%, rgba(0,70,55,1) 100%);
+	background: -webkit-linear-gradient(0deg, rgba(38,40,44,1) 0%, rgba(0,70,55,1) 100%);
+	background: linear-gradient(0deg, rgba(38,40,44,1) 0%, rgba(0,70,55,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#26282c",endColorstr="#004637",GradientType=1);
 }
 .stitch_fn_big_text h3 {
 	margin: 0 0 0.5rem 0;
@@ -2249,17 +2548,17 @@ input.button-form:hover {
 	top: 50%;
 	width: 2rem;
 	height: 2rem;
-	right: 50px;
+	right: 4rem;
 	cursor: pointer;
 	display: block;
 	border-radius: 0.25rem;
-	background-color:rgba(26,57,134,0.2);
+	background-color:rgba(0,227,178,0.16);
 	-webkit-backdrop-filter: blur(0.5rem);
 	backdrop-filter: blur(0.5rem);
 	transition: all .3s ease;
 }
 .stitch_fn_totop:hover{
-	background-color: #0e0e0f;
+	background-color: rgba(0,227,178,0.4);
 }
 .stitch_fn_totop:after{
 	content: '';
@@ -2267,7 +2566,7 @@ input.button-form:hover {
 	width: 7px;
 	height: 1px;
 	height: 1.5px;
-	background-color: #eee;
+	background-color: #f1f2f3;
 	transform: rotate(45deg);
 	top: 15px;
 	left: 14px;
@@ -2278,7 +2577,7 @@ input.button-form:hover {
 	width: 7px;
 	height: 1px;
 	height: 1.5px;
-	background-color: #eee;
+	background-color: #f1f2f3;
 	transform: rotate(-45deg);
 	top: 15px;
 	right: 14px;
@@ -2286,28 +2585,35 @@ input.button-form:hover {
 /*---------------------------------------------------*/
 /*	18) Footer
 /*---------------------------------------------------*/
-.stitch_fn_footer{
+.stitch_fn_footer {
 	width: 100%;
 	float: left;
 	clear: both;
-	padding: 66px 0;
+	padding: 4rem 0;
 	position: relative;
-	background: rgb(14,31,73);
+	background: rgba(29,100,84,1);
 }
 
-.stitch_fn_footer p{
+.stitch_fn_footer p {
 	margin: 0;
 	padding: 0;
 	font-size: 1rem;
 	font-weight:500;
-	letter-spacing: -0.25px;
-	color: #979fb1;
+	color: #2A9179;
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-.stitch_fn_footer a{
+.stitch_fn_footer a {
 	text-decoration:none;
-	color: #979fb1;
+	color: #2A9179;
+}
+
+.footer_symbol {
+	height:2rem;
+	width:auto;
+	mix-blend-mode: luminosity;
+	opacity:0.8;
+	margin-bottom:1rem;
 }
 /*---------------------------------------------------*/
 /*	19) Shortcode: Video
@@ -2583,7 +2889,8 @@ input.button-form:hover {
 	}
 }
 @media(max-width: 1250px){
-	.stitch_fn_hero1 .hero1_in{
+
+	.stitch_fn_hero5 .hero5_in{
 		flex-direction: row;
 	}
 
@@ -2636,20 +2943,20 @@ input.button-form:hover {
 	}
 }
 @media(max-width: 900px){
-	.stitch_fn_hero1 .hero1_left{
+	.stitch_fn_hero5 .hero5_left{
 		width:50%;
 	}
-	.stitch_fn_hero1 .hero1_right{
+	.stitch_fn_hero5 .hero5_right{
 		width:50%;
 		display:flex;
 		align-items: center;
 	}
-	.stitch_fn_hero1 .hero1_right .hero1_img {
+	.stitch_fn_hero5 .hero5_right .hero5_img {
 	    width:100%;
 		height:100%;
 		padding:0;
 	}
-	.hero1_border {
+	.hero5_border {
 		width:120%;
 		height:120%;
 		padding:0;
@@ -2680,17 +2987,17 @@ input.button-form:hover {
 		width: 100%;
 		right: -100%;
 	}
-	.stitch_fn_hero1 .hero1_left {
+	.stitch_fn_hero5 .hero5_left {
 		width: 80%;
 	}
-	.stitch_fn_hero1 .hero1_right {
+	.stitch_fn_hero5 .hero5_right {
 		width:20%;
 	}
-	.stitch_fn_hero1 .hero1_right img{
+	.stitch_fn_hero5 .hero5_right img{
 		display:none;
 	}
 
-	.stitch_fn_hero1 .hero1_in{
+	.stitch_fn_hero5 .hero5_in{
 		background-image: url("../img/hero-1-m.png");
 		background-size: contain;
 		width:100%;
@@ -2773,12 +3080,12 @@ input.button-form:hover {
 		padding: 0;
 		font-size: 1.25rem;
 	}
-	.stitch_fn_hero1 .hero1_menu p{
+	.stitch_fn_hero5 .hero5_menu p{
 		margin:0 0 0.25rem 0;
 
 		font-size:0.875rem;
 	}
-	.stitch_fn_hero1 .hero1_menu a{
+	.stitch_fn_hero5 .hero5_menu a{
 		text-decoration: none;
 		color: #979fb1;
 		font-size: 1rem;
@@ -2792,7 +3099,7 @@ input.button-form:hover {
 		-o-transition: all .2s ease-in-out;
 		-ms-transition: all .2s ease-in-out;
 	}
-	.stitch_fn_hero1 .hero1_in{
+	.stitch_fn_hero5 .hero5_in{
 		background-size:100% auto; 
 	}
 	.stitch_fn_blog_list .title_wrapper .title_holder h3{
