@@ -14,20 +14,20 @@
 html {
 	overflow-x: hidden;
 	padding: 0px;
-	margin: 0px
+	margin: 0px;
+	scroll-behavior:smooth;
 }
 
 ::selection {
     background: #5A6378;
 }
 
-body{
+body {
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;	
 	line-height: 1.25;
 	letter-spacing: -0.25px;
 	word-wrap: break-word;
 	font-weight: 400;
-	background-color: rgb(28,29,31);
 	color: #979fb1;
 }
 
@@ -69,9 +69,6 @@ body{
 }
 .container.wide {
 	max-width: 1440px;
-}
-.mobile_only {
-	display:none;
 }
 
 /*---------------------------------------------------*/
@@ -432,13 +429,12 @@ a.stitch_fn_circle_link:hover:after{
 
 .btn_page {
 	margin:0;
-	padding: 0;
+	padding:0;
 	color: #979fb1;
 	text-decoration:none!important;
-	font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-	font-size: 1rem;
+	font-size: 1.25rem;
 	letter-spacing: 0;
-	line-height:1;
+	line-height:1.25;
 	font-weight: 500;
 	cursor: pointer;
 	display: block;
@@ -462,7 +458,7 @@ a.stitch_fn_circle_link:hover:after{
 	margin: 0;
 	display: inline;
 	text-align:center;
-	padding: 0.5rem;
+	padding: 0.25rem;
   }
 
 
@@ -581,9 +577,15 @@ a.stitch_fn_circle_link:hover:after{
 /*	hero1
 /*---------------------------------------------------*/
 #hero1 {
-	padding: 160px 0 80px 0;
-	background: rgb(28,29,31,1);
-	background: linear-gradient(0deg, rgba(28,29,31,1) 0%, rgba(29,100,84,1) 100%);
+	margin:5rem 0 0 0;
+	padding: 7.5rem 0 5rem 0;
+	/* background: rgb(28,29,31,1);
+	background: linear-gradient(0deg, rgba(28,29,31,1) 0%, rgba(29,100,84,1) 100%); */
+	background: url(../img/hero-1.png);
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: 56% 50%;
+
 }
 
 .stitch_fn_hero1 {
@@ -602,7 +604,7 @@ a.stitch_fn_circle_link:hover:after{
 	background-repeat:no-repeat;
 }
 .stitch_fn_hero1 .hero1_left {
-	width: 40%;
+	width: 32%;
 }
 .stitch_fn_hero1 .hero1_left .l_inner {
 	width: 100%;
@@ -627,7 +629,7 @@ a.stitch_fn_circle_link:hover:after{
 	padding: 0;
 }
 .stitch_fn_hero1 .hero1_menu p {
-	margin:0 ;
+	margin:0 0 0.5rem 0;
 	padding:0;
 	font-size:0.875;
 	font-weight:bold;
@@ -677,112 +679,10 @@ a.stitch_fn_circle_link:hover:after{
 	-ms-transition: all .2s ease-in-out;
 }
 
-.stitch_fn_hero1 .hero1_right {
-	width: 60%;
-	position: relative;
-	margin: 0 auto;
-	z-index: 1;
-}
-
-.stitch_fn_hero1 .hero1_right img {
-	opacity: 0;
-	min-width: 100%;
-}
-
-.stitch_fn_hero1 .hero1_right .hero1_border {
-	padding: 30px;
-	position: absolute;
-	width: 100%;
-	top: 0;
-	left: 0;
-}
-
-.stitch_fn_hero1 .hero1_right .hero1_img {
-	padding: 30px;
-	width: 100%;
-	position: relative;
-	z-index: 5;
-}
-
-.stitch_fn_hero1 .hero1_right .hero1_img .stitch_fn_abs_img {
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	border-radius: 1rem;
-	overflow: hidden;
-}
-
-.stitch_fn_hero1 .hero1_right .hero1_border:after {
-	content: '';
-	position: absolute;
-	width: 30%;
-	top: 0;
-	left: 0;
-	background-color: transparent;
-	bottom: 0;
-}
-
-.stitch_fn_hero1 .hero1_right .hero1_border:before {
-	content: '';
-	position: absolute;
-	width: 30%;
-	top: 0;
-	right: 0;
-	background-color: transparent;
-	bottom: 0;
-}
-
 .hero1_btn {
-	margin-bottom: 2rem;
+	margin-bottom: 2.5rem;
 }
 
-
-#flip {
-	height:72px;
-	overflow:hidden;
-  }
-  
-  #flip > div > div {
-	height:100%;
-	margin-bottom:42px;
-	display:inline-block;
-	line-height:1;
-  }
-  
-  #flip div:first-child {
-	animation: show 5s linear infinite;
-  }
-  
-  #flip div div {
-	background:#0B2721;
-	border:1px solid #0B2721;
-	border-radius:0.5rem;
-	padding: 0.75rem 0.5rem;
-  }
-
-  #flip div:first-child div {
-  }
-
-
-  #flip div:nth-child(2) div {
-	margin-bottom: 34px;
-  }
-  #flip div:last-child div {
-	margin-top:-2rem;
-	
-  }
-  
-  @keyframes show {
-	0% {margin-top:-270px;}
-	5% {margin-top:-180px;}
-	33% {margin-top:-180px;}
-	38% {margin-top:-90px;}
-	66% {margin-top:-90px;}
-	71% {margin-top:0px;}
-	99.99% {margin-top:0px;}
-	100% {margin-top:-270px;}
-  }
 
 /*---------------------------------------------------*/
 /*	hero5
@@ -1044,11 +944,11 @@ a.stitch_fn_circle_link:hover:after{
 	margin: 0 0 4rem 0;
 	padding: 0;
 	font-size: 1.25rem;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 1.5;
 	color: #DADDE3;
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+	text-shadow: 2px 2px 2px rgba(11,39,33,1);
 }
 
 /*---------------------------------------------------*/
@@ -1139,6 +1039,11 @@ a.stitch_fn_circle_link:hover:after{
 	line-height: 1.25;
 	letter-spacing: 0;
 	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+
+.stitch_fn_hero4 .s_item .s_title {
+	display:flex;
+	flex-direction:column;
 }
 
 .stitch_fn_hero4 .s_item .s_desc {
@@ -1263,7 +1168,7 @@ a.stitch_fn_circle_link:hover:after{
 	height: 100%;
 	border-radius: 0.5rem;
 	border: 1px solid rgba(20,70,58,1);	
-	padding: 5rem 2.5rem 20rem 2.5rem;
+	padding: 4rem 2.5rem 20rem 2.5rem;
 	position: relative;
 	transition: all .3s ease;
 	display:flex;
@@ -1273,14 +1178,18 @@ a.stitch_fn_circle_link:hover:after{
 }
 
 .s_item:hover{
-	background-size:102% auto!important;
+	background-size:100.8% auto!important;
 	background-color: #0e322a;
-	box-shadow: 0 1rem 1rem rgba(0,0,0,0.32);
-	transform: translate3d(0px,-0.4px,0px);
+	/* box-shadow: 0 1rem 1rem rgba(0,0,0,0.2); */
+	/* transform: translate3d(0px,-0.8px,0px); */
 }
 
 .s_item .s_title{
-	display:grid;
+	margin-bottom: 1rem;
+	display:flex;
+	flex-direction:row;
+	align-items: center;
+	line-height: 1.25;
 }
 
 .s_item .s_title h3 {
@@ -1291,7 +1200,6 @@ a.stitch_fn_circle_link:hover:after{
 	font-size: 2rem;
 	letter-spacing: 0;
 	font-weight: 600;
-	margin-bottom: 1rem;
 	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
 }
 
@@ -1301,22 +1209,33 @@ a.stitch_fn_circle_link:hover:after{
 	font-size: 1rem;
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 	font-weight: 600;
-	line-height: 1.5;
 	letter-spacing: 0;
 	color:#00e3b2;
 	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
 }
 
 .s_item .s_title .s_title_number {
+	margin: 0 0.5rem 0 0;
+	padding:0 0 0.5rem 0;
 	font-weight:900!important;
+	font-size:5rem;
 	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+.s_item .s_title .s_title_text {
+	margin:0;
+	padding:0;
+	display:flex;
+	flex-direction: column;
+	align-content:flex-start;
+	align-items:flex-start;
 }
 
 .s_item .s_desc {
 	display:grid;
+	font-size:1.25rem;
 	line-height:1.5;
 	color:#C4C8D3;
-	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+	text-shadow: 0px 4px 4px rgba(11,39,33,0.8);
 }
 
 .s_btn {
@@ -1335,7 +1254,7 @@ a.stitch_fn_circle_link:hover:after{
 	width:100%;
 	padding:0.75rem 1rem;
 	font-size: 1rem;
-	font-weight:bold;
+	font-weight:medium;
 	border:1.5px solid rgba(0,227,178,0.2);
 	border-radius:0.75rem;
 	color: #00e3b2;
@@ -1355,7 +1274,7 @@ a.stitch_fn_circle_link:hover:after{
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	-ms-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;s
+	transition: all .2s ease-in-out;
 }
 
 .s_btn a:hover {
@@ -1436,22 +1355,33 @@ a.stitch_fn_circle_link:hover:after{
 
 .swiper-container-wrapper--timeline .swiper-slide {
 	display: flex;
-	background: #26282C;
-	min-height: 20rem;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	min-height: 30rem;
+	height:100%;
+	border: 1px solid rgba(20,70,58,1);	
 	border-radius: 1rem;
+	background: rgb(11,39,33);
+	background: -moz-linear-gradient(180deg, rgba(20, 70, 58, 0.8) 0%, rgba(13, 39, 38, 0.2) 100%);
+	background: -webkit-linear-gradient(180deg, rgba(20, 70, 58, 0.8) 0%, rgba(13, 39, 38, 0.2) 100%);
+	background: linear-gradient(180deg, rgba(20, 70, 58, 0.8) 0%, rgba(13, 39, 38, 0.2) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b2721",endColorstr="#10362d",GradientType=1);
   }
   .swiper-container-wrapper--timeline .swiper-slide .container {
 	padding: 0;
 	width: 100%;
   }
   .swiper-container-wrapper--timeline .swiper-slide .title {
-	font-size: 1.25rem;
+	font-size: 1rem;
 	opacity: 0;
 	transition: 0.5s ease 0.5s;
   }
   .swiper-container-wrapper--timeline .swiper-slide-active .title {
+	margin: 0 0 1rem;
+	font-size:1rem;
+	color: #C4C8D3;
+	font-weight:600;
 	opacity: 1;
   }
   .swiper-container-wrapper--timeline .swiper-pagination-progressbar {
@@ -1537,115 +1467,83 @@ a.stitch_fn_circle_link:hover:after{
 	background: #383e4b;
   }
 
-#project .stitch_fn_b2c {
-	margin-bottom: 100px;
-}
-
-.stitch_fn_b2c{
-	width: 100%;
-	float: left;
-	clear: both;
-}
-
-#project .stitch_fn_b2c img{
-	margin:1rem 0;
-	padding:0;
-	height:4rem;
-	width:auto;
-}
-
-.stitch_fn_b2c ul{
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	display: flex;
-	margin-left: -30px;
-	min-width: 100%;
+  .swiper_slide_row {
+	width:100%;
+	display:flex;
 	flex-direction: row;
-	flex-wrap: wrap;
-}
-.stitch_fn_b2c ul li{
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	width: 33.3333%;
-	padding-left: 30px;
-	padding-top: 16px;
-	margin-bottom: 30px;
-}
-.stitch_fn_b2c .s_item{
-	width: 100%;
-	float: left;
-	clear: both;
-	height: 100%;
-	border-radius: 0.5rem;
-	padding: 5rem 2.5rem 10rem 2.5rem;
-	position: relative;
-	transition: all .3s ease;
-	display:grid;
-}
+	justify-content: center;
+	align-items: center;
+  }
 
-.stitch_fn_b2c .s_item:hover{
-	background-size:108%!important;	
-	transform: translate3d(0px,-5px,0px);
-}
-.stitch_fn_b2c .s_item .s_counter{
-	width: 50px;
-	height: 90px;
-	display: block;
-	left: 46px;
-	top: -16px;
-	position: absolute;
-	background-color: #1e1427;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-.stitch_fn_b2c .s_item .s_counter span{
-	color: #eee;
-	font-size: 16px;
-	line-height: 34px;
-	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-	width: 100%;
-	max-width: 100%;
-	padding: 0 2px;
-	position: absolute;
-	bottom: 0;
-	letter-spacing: 0;
-	text-align: center;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-.stitch_fn_b2c .s_item h3{
-	margin: 0;
-	padding: 0;
-	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-	color: #dee0e3;
-	font-size: 1.5rem;
-	letter-spacing: 0;
-	font-weight:600;
-	margin-bottom: 2rem;
-}
-.stitch_fn_b2c .s_item p{
-	font-size: 1rem;
-	line-height: 1.5;
-	letter-spacing: 0;
-	margin: 0;
-	padding: 0;
-	color: #dee0e3;
-	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-	font-weight: 400;
-}
+  .swiper_slide_left {
+	display:flex;
+	flex-direction:column;
+	align-content: center;
+	align-items:center;
+	justify-content:space-evenly;
+  }
 
-.stitch_fn_b2c .s_item .s_btn a{
-	margin-bottom:0.725rem;
-	display: block;
-	float: left;
+  .swiper_slide_right {
+	display:flex;
+	flex-direction: column;
+	align-content: center;
+	align-items:center;
+	justify-content:space-evenly;
+  }
+
+  .swiper-slide h3{
+	font-size:2rem;
+	color:#f7f8f9;
+  }
+
+  .swiper-slide img{
+	width:12rem;
+	height:auto;
+  }
+
+  .swiper-slide input[type="button"]{
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	margin:0;
+	padding:0.75rem 2rem;
+	width:min-content;
 	font-size: 1rem;
+	font-weight:bold;
+	border:1.5px solid rgba(0,227,178,0.2);
+	border-radius:0.75rem;
 	color: #00e3b2;
-	line-height: 24px;
-	text-decoration: none;
+	background:rgba(20,70,58,1);
+	background: -moz-linear-gradient(180deg, rgba(20,70,58,0.64) 0%, rgba(13,39,38,0.2) 100%);
+	background: -webkit-linear-gradient(180deg, rgba(20,70,58,0.64) 0%, rgba(13,39,38,0.2) 100%);
+	background: linear-gradient(180deg, rgba(20,70,58,0.64) 0%, rgba(13,39,38,0.2) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#14463a",endColorstr="#0d2726",GradientType=1);
+	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(8px);
+	letter-spacing: 0;
+	line-height:1;
+	text-decoration:none!important;
+	cursor: pointer;
+	box-shadow:none;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	}
 	
+.swiper-slide input[type="button"]:hover {
+	border:1.5px solid rgba(0,227,178,0.4);
+	background:rgba(20,70,58,1);
+	background: -moz-linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
+	background: -webkit-linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
+	background: linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#14463a",endColorstr="#0d2726",GradientType=1);
+	box-shadow:0px 4px 8px rgba(0, 0, 0, 0.2);
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+	transform: translate3d(0px,-0.4px,0px);
 }
 
 /*---------------------------------------------------*/
@@ -1746,9 +1644,9 @@ a.stitch_fn_circle_link:hover:after{
 #hero4 {
 	padding: 6rem 0;
 	background: rgb(38,40,44);
-	background: -moz-linear-gradient(0deg, rgba(38,40,44,1) 0%, rgba(28,29,31,1) 100%);
-	background: -webkit-linear-gradient(0deg, rgba(38,40,44,1) 0%, rgba(28,29,31,1) 100%);
-	background: linear-gradient(0deg, rgba(38,40,44,1) 0%, rgba(28,29,31,1) 100%);
+	background: -moz-linear-gradient(0deg, rgba(28,29,31,1) 0%, rgba(38,40,44,1) 20%, rgba(38,40,44,1) 80%, rgba(28,29,31,1) 100%);
+	background: -webkit-linear-gradient(0deg, rgba(28,29,31,1) 0%, rgba(38,40,44,1) 20%, rgba(38,40,44,1) 80%, rgba(28,29,31,1) 100%);
+	background: linear-gradient(0deg, rgba(28,29,31,1) 0%, rgba(38,40,44,1) 20%, rgba(38,40,44,1) 80%, rgba(28,29,31,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#26282c",endColorstr="#1c1d1f",GradientType=1);
 }
 
@@ -2888,60 +2786,32 @@ input.button-form:hover {
 		margin: 0 auto;
 	}
 }
-@media(max-width: 1250px){
+@media(max-width: 1280px) {
 
+	.stitch_fn_hero1 .hero1_left {
+		width: 40%;
+	}
 	.stitch_fn_hero5 .hero5_in{
 		flex-direction: row;
 	}
 
-	#information{
-		padding: 93px 0 80px 0;
-	}
-	#hero2{
-		padding: 10rem 0;
-	}
-	.stitch_fn_hero4 ul li{
-		width: 50%;
-	}
-	.stitch_fn_hero2 ul li{
-		width: 50%;
-	}
-	.stitch_fn_b2c ul li{
-		width: 50%;
-	}
-	#portfolio{
-		padding: 10rem 0;
-	}
-	#project{
-		padding: 10rem 0;
-	}
-
-	#awards{
-		padding: 10rem 0;
-	}
-	#contact{
-		padding: 10rem 0;
-	}
-	#partners{
-		padding: 10rem 0;
-	}
 }
 
-@media(max-width: 1040px){
+@media(max-width: 1000px){
+
+	.stitch_fn_hero1 .hero1_left {
+		width: 50%;
+	}
 
 	.stitch_fn_footer .container{
 		padding-right: 45px;
 	}
 	.stitch_fn_totop{
-		right: 10px;
+		right: 1rem;
 	}
 
 }
-@media(max-width:1104px) {
-	.mobile_only {
-		display: block;
-	}
-}
+
 @media(max-width: 900px){
 	.stitch_fn_hero5 .hero5_left{
 		width:50%;
@@ -2963,6 +2833,13 @@ input.button-form:hover {
 	}
 }
 
+@media(max-width: 816px){
+	.stitch_fn_hero1 .hero1_left {
+		width: 64%;
+	}
+	
+}
+
 @media(max-width: 768px){
 	.stitch_fn_wrapper.opened .stitch_fn_content{
 		padding-right: 0;
@@ -2978,9 +2855,6 @@ input.button-form:hover {
 		justify-content: center;
 		align-items: center;
 		gap: 0.5rem;
-	}
-	.btn_page {
-		font-size:0.875rem;
 	}
 
 	.stitch_fn_sidebar_header{
@@ -3042,12 +2916,30 @@ input.button-form:hover {
 		padding: 4rem 2rem 25rem 2rem;
 	}
 }
+
 @media(max-width: 640px){
-	.mobile_only {
-		display: block;
+	.stitch_fn_hero1 .hero1_left {
+		width: 80%;
+	}
+	#hero1 {
+		margin:5rem 0 0 0;
+		padding: 7.5rem 0 5rem 0;
+		/* background: rgb(28,29,31,1);
+		background: linear-gradient(0deg, rgba(28,29,31,1) 0%, rgba(29,100,84,1) 100%); */
+		background: url(../img/hero-1-m.png);
+		background-size:contain;
+		background-repeat: no-repeat;
+		background-position: right 50%;
+	
 	}
 }
-@media(max-width: 480px){
+
+@media(max-width: 500px){
+
+	.stitch_fn_hero1 .hero1_left {
+		width: 100%;
+	}
+
 	.s_item:hover{
 		background-size:100% auto!important;
 	}
@@ -3057,7 +2949,7 @@ input.button-form:hover {
 	}
 		
 	.nav-btn a{
-		padding:0.5rem 1rem;
+		padding:0.5rem 0.75rem;
 		font-size: 0.875rem;
 		font-weight:bold;
 		border-radius:0.5rem;

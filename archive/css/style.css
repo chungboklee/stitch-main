@@ -1,0 +1,3269 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*---------------------------------------------------*/
+/*	01) BASE
+/*---------------------------------------------------*/
+
+html {
+	overflow-x: hidden;
+	padding: 0px;
+	margin: 0px;
+}
+
+::selection {
+    background: #5A6378;
+}
+
+body {
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;	
+	line-height: 1.25;
+	letter-spacing: -0.25px;
+	word-wrap: break-word;
+	font-weight: 400;
+	color: #979fb1;
+	height:100vh;
+	background: rgb(29,100,84)!important;
+	background: -moz-linear-gradient(0deg, rgba(29,100,84,1) 0%, rgba(28,29,31,1) 8%, rgba(28,29,31,1) 92%, rgba(29,100,84,1) 100%)!important;
+	background: -webkit-linear-gradient(0deg, rgba(29,100,84,1) 0%, rgba(28,29,31,1) 8%, rgba(28,29,31,1) 92%, rgba(29,100,84,1) 100%)!important;
+	background: linear-gradient(0deg, rgba(29,100,84,1) 0%, rgba(28,29,31,1) 8%, rgba(28,29,31,1) 92%, rgba(29,100,84,1) 100%)!important;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1d6454",endColorstr="#1d6454",GradientType=1);
+}
+
+.color-raon{
+	color: #3062d7!important;
+}
+.color-stitchgreen{
+	color: #00e3b2!important;
+}
+.color-stitchgreen-dark{
+	color: #00a884!important;
+}
+.color-stitchwhite{
+	color: #f7f8f9!important;
+}
+.color-stitchgray{
+	color: #979fb1!important;
+}
+.color-stitchgray-dark{
+	color: #6B768E!important;
+}
+
+.stitch_fn_svg{
+	fill: currentcolor;
+	width: 15px;
+	height: 15px;
+}
+.stitch_fn_wrapper{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+}
+.stitch_fn_wrapper,
+.stitch_fn_wrapper *{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	   -moz-box-sizing: border-box; /* Firefox, other Gecko */
+			box-sizing: border-box; /* Opera/IE 8+ */
+}
+.container.wide {
+	max-width: 1440px;
+}
+.mobile_only {
+	display:none;
+}
+
+/*---------------------------------------------------*/
+/*	02) Start
+/*---------------------------------------------------*/
+
+.stitch_fn_nav{
+	width: 100%;
+	float: left;
+	clear: both;
+	position: fixed;
+	top:0;
+	display:flex;
+	align-items: center;;
+	z-index: 6;
+}
+.stitch_fn_content{
+	width: 100%;
+	float: left;
+	clear: both;
+	position: relative;
+	transition: all .3s ease;
+	z-index: 5;
+}
+.stitch_fn_content section{
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.stitch_fn_abs_img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+/* circle animation link */
+a.stitch_fn_circle_link{
+	position: relative;
+	transform: translateZ(0);
+	cursor: pointer;
+}
+a.stitch_fn_circle_link:after{
+	content: '';
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: -2px;
+    left: 100%;
+    background-color: #00e3b2;
+	
+	-webkit-transition: left .5s ease,width .5s ease;
+	   -moz-transition: left .5s ease,width .5s ease;
+	    -ms-transition: left .5s ease,width .5s ease;
+	     -o-transition: left .5s ease,width .5s ease;
+	        transition: left .5s ease,width .5s ease;
+}
+a.stitch_fn_circle_link:hover:after{
+ width: 100%;
+    left: 0;
+	
+	-webkit-transition: width .5s ease;
+	   -moz-transition: width .5s ease;
+	    -ms-transition: width .5s ease;
+	     -o-transition: width .5s ease;
+	        transition: width .5s ease;
+}
+/*---------------------------------------------------*/
+/*	00) SIDEBAR HEADER
+/*---------------------------------------------------*/
+.stitch_fn_sidebar_header{
+	width: 400px;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	right: -400px;
+	background-color: #1e1427;
+	box-shadow: -10px 0px 10px rgba(0,0,0,0.1);
+	z-index: 100;
+	
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+
+
+.stitch_fn_sidebar_header .closer{
+	position: absolute;
+    top: 30px;
+    right: 30px;
+    display: block;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 999;
+    background: rgba(255,255,255,.04);
+    border-radius: 3px;
+}
+.stitch_fn_sidebar_header .closer:after,
+.stitch_fn_sidebar_header .closer:before{
+	width: 14px;
+    height: 2px;
+    background-color: #fff;
+    content: '';
+    position: absolute;
+    transform: rotate(45deg);
+    top: 50%;
+    left: 50%;
+    margin: -1px 0 0 -7px;
+}
+.stitch_fn_sidebar_header .closer:before{
+	transform: rotate(-45deg);
+}
+.stitch_fn_sidebar_header .header_inner{
+	width: 100%;
+    height: 100%;
+    clear: both;
+    float: left;
+}
+
+.logo {
+	display:block;
+	padding:0;
+	opacity:0.92;
+	-webkit-transition: opacity .3s ease-in-out;
+	-moz-transition: opacity .3s ease-in-out;
+	-o-transition: opacity .3s ease-in-out;
+	-ms-transition: opacity .3s ease-in-out;
+	transition: opacity .3s ease-in-out;
+}
+
+.logo:hover {
+	opacity:1;
+	-webkit-transition: opacity .3s ease-in-out;
+	-moz-transition: opacity .3s ease-in-out;
+	-o-transition: opacity .3s ease-in-out;
+	-ms-transition: opacity .3s ease-in-out;
+	transition: opacity .3s ease-in-out;
+}
+
+.stitch_fn_sidebar_header .menu_logo{
+	padding: 60px;
+}
+.stitch_fn_sidebar_header .menu_logo a{
+	text-decoration: none;
+}
+.stitch_fn_sidebar_header .menu_nav{
+	padding: 0px 60px 0px 60px;
+	height: calc(100vh - 165px - 148px);
+}
+.stitch_fn_sidebar_header .menu_nav > div{
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+.stitch_fn_sidebar_header .menu_nav > div > ul{
+	display: table-cell;
+	vertical-align: middle;
+}
+.stitch_fn_sidebar_header .menu_nav ul.vert_nav{
+	margin: 0;
+	list-style-type: none;
+	padding: 0;
+}
+.stitch_fn_sidebar_header .menu_nav ul.vert_nav li{
+	margin: 0;
+	padding: 0;
+}
+.stitch_fn_sidebar_header .menu_nav ul.vert_nav li{
+	transform: translateY(20px);
+	opacity: 0;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.stitch_fn_sidebar_header .menu_nav ul.vert_nav li.fn_ready{
+	transform: translateY(0px);
+	opacity: 1;
+}
+.stitch_fn_sidebar_header .menu_nav ul.vert_nav li > a{
+	text-decoration: none;
+    color: #eee;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    text-transform: capitalize;
+    font-weight: 600;
+    display: block;
+    position: relative;
+    padding: 13px 0px;
+	font-size: 16px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.stitch_fn_sidebar_header .menu_nav ul.vert_nav li > a:hover{
+	color: #3062d7;
+}
+.stitch_fn_sidebar_header .menu_nav ul.vert_nav li > a:before{
+	position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255,255,255,.1);
+    left: 0px;
+    bottom: 0px;
+}
+.stitch_fn_sidebar_header .menu_nav ul.vert_nav li:last-child > a:before{display: none;}
+.stitch_fn_sidebar_header .menu_nav ul.vert_nav li > a:after{
+	position: absolute;
+	content: "";
+	width: 0%;
+	height: 1px;
+	background-color: rgba(255,255,255,.08);
+	right: 0px;
+	bottom: 0px;
+	
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.stitch_fn_sidebar_header .menu_nav ul.vert_nav li:last-child > a:after{display: none;}
+.stitch_fn_sidebar_header .menu_nav ul.vert_nav li > a:hover:after{width: 100%;}
+.stitch_fn_sidebar_header ul.vert_nav li{
+	position: relative;
+}
+.stitch_fn_sidebar_header .menu_logo{
+	position: relative;
+	z-index: 10;
+}
+.stitch_fn_sidebar_header .social_list{
+	position: absolute;
+    right: 0px;
+	left: 0px;
+    bottom: 0px;
+    padding: 60px 60px 54px 60px;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: bottom 300ms linear;
+}
+.stitch_fn_sidebar_header .social_list ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: auto;
+	margin-left: -3px;
+}
+.stitch_fn_sidebar_header .social_list ul li{
+	list-style-type: none;
+	padding: 0;
+    margin: 5px 0px 5px 5px;
+    display: block;
+}
+.stitch_fn_sidebar_header .social_list ul li a{
+	text-decoration: none;
+	transition: all 300ms ease;
+	color: #eee;
+	font-size: 14px;
+	display: block;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+}
+.stitch_fn_sidebar_header .social_list ul li a:hover{
+	color: #3062d7;
+}
+/*---------------------------------------------------*/
+/*	00) HEADER
+/*---------------------------------------------------*/
+.stitch_fn_header {
+	position:relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 80px;
+    align-items: center;
+    padding: 0 2rem;
+	background:rgba(13,39,38,1);
+	background: -moz-linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
+	background: -webkit-linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
+	background: linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#14463a",endColorstr="#0d2726",GradientType=1);
+	-webkit-backdrop-filter: blur(0.5rem);
+	backdrop-filter: blur(0.5rem);
+	border: 1px solid rgba(20,70,58,1);
+	border-top: none!important;
+	border-radius: 0 0 1rem 1rem;
+	box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+.stitch_fn_header .logo img {
+	height:2.5rem;
+	width:auto;
+}
+
+.nav-menu{
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 0.75rem;
+}
+.nav-btn a{
+	margin:0;
+	padding:0.75rem 1rem;
+	font-size: 1rem;
+	font-weight:bold;
+	border:1.5px solid rgba(0,227,178,0.2);
+	border-radius:0.75rem;
+	color: #00e3b2;
+	background:rgba(20,70,58,1);
+	background: -moz-linear-gradient(180deg, rgba(20,70,58,0.64) 0%, rgba(13,39,38,0) 100%);
+	background: -webkit-linear-gradient(180deg, rgba(20,70,58,0.64) 0%, rgba(13,39,38,0) 100%);
+	background: linear-gradient(180deg, rgba(20,70,58,0.64) 0%, rgba(13,39,38,0.8) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#14463a",endColorstr="#0d2726",GradientType=1);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	letter-spacing: 0;
+	line-height:1;
+	text-decoration:none!important;
+	cursor: pointer;
+	box-shadow:none;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;s
+}
+
+.nav-btn a:hover{
+	border:1.5px solid rgba(0,227,178,0.4);
+	background:rgba(20,70,58,1);
+	background: -moz-linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
+	background: -webkit-linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
+	background: linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#14463a",endColorstr="#0d2726",GradientType=1);
+	box-shadow:0px 4px 8px rgba(0, 0, 0, 0.4);
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.btn_page {
+	margin:0;
+	padding: 0;
+	color: #979fb1;
+	text-decoration:none!important;
+	font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-size: 1rem;
+	letter-spacing: 0;
+	line-height:1;
+	font-weight: 500;
+	cursor: pointer;
+	display: block;
+	-webkit-transition: color .3s ease-in-out;
+	-moz-transition: color .3s ease-in-out;
+	-o-transition: color .3s ease-in-out;
+	-ms-transition: color .3s ease-in-out;
+	transition: color .3s ease-in-out;
+  }
+  .btn_page:hover, .btn_page_current {
+	color: #f7f8f9;
+	-webkit-transition: color .3s ease-in-out;
+	-moz-transition: color .3s ease-in-out;
+	-o-transition: color .3s ease-in-out;
+	-ms-transition: color .3s ease-in-out;
+	transition: color .3s ease-in-out;
+  }
+  
+  ul.nav-menu li {
+	width: auto;
+	margin: 0;
+	display: inline;
+	text-align:center;
+	padding: 0.5rem;
+  }
+
+
+/*---------------------------------------------------*/
+/*	00) HAMBURGER
+/*---------------------------------------------------*/
+.hamburger {
+	padding: 0;
+	/* display: inline-block; */
+	display:none;
+	cursor: pointer;
+	transition-property: opacity, filter;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+}
+
+
+.hamburger-box {
+	width: 30px;
+	height: 13px;
+	display: inline-block;
+	position: relative;
+}
+
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+	width: 30px;
+	height: 1px;
+	background-color: #eee;
+	border-radius: 0px;
+	position: absolute;
+	transition-property: transform;
+	transition-duration: 0.15s;
+	transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+	content: "";
+	display: block;
+}
+
+.hamburger-inner::before {
+	top: -10px;
+}
+
+.hamburger-inner::after {
+	bottom: -10px;
+}
+
+.hamburger--spring .hamburger-inner {
+	top: 2px;
+	transition: background-color 0s 0.13s linear;
+}
+
+.hamburger--spring .hamburger-inner::before {
+	top: 6px;
+	transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spring .hamburger-inner::after {
+	top: 12px;
+	transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spring.is-active .hamburger-inner {
+	transition-delay: 0.22s;
+	background-color: transparent !important;
+}
+
+.hamburger--spring.is-active .hamburger-inner::before {
+	top: 0;
+	transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+	transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--spring.is-active .hamburger-inner::after {
+	top: 0;
+	transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+	transform: translate3d(0, 10px, 0) rotate(-45deg);
+}
+/*---------------------------------------------------*/
+/*	00) SIDEBAR HEADER ANIMATION
+/*---------------------------------------------------*/
+
+.stitch_fn_content,
+.stitch_fn_sidebar_header{
+	transition: all .5s ease;
+}
+.stitch_fn_wrapper.opened .stitch_fn_sidebar_header{
+	right: 0;
+}
+.stitch_fn_wrapper.opened .stitch_fn_content{
+	padding-right: 400px;
+}
+.stitch_fn_wrapper.opened .stitch_fn_sidebar_header,
+.stitch_fn_wrapper.opened .stitch_fn_content{
+	transition: all .5s .3s ease;
+}
+
+/*---------------------------------------------------*/
+/*	hero1
+/*---------------------------------------------------*/
+#hero1 {
+	padding: 160px 0 80px 0;
+	background: rgb(28,29,31,1);
+	background: linear-gradient(0deg, rgba(28,29,31,1) 0%, rgba(29,100,84,1) 100%);
+}
+
+.stitch_fn_hero1 {
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+.stitch_fn_hero1 .hero1_in {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	background-image: none;
+	background-size:auto 100%; 
+	background-position:right bottom; 
+	background-repeat:no-repeat;
+}
+.stitch_fn_hero1 .hero1_left {
+	width: 40%;
+}
+.stitch_fn_hero1 .hero1_left .l_inner {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.stitch_fn_hero1 .hero1_left .hero5_btn {
+	margin-bottom: 4rem;
+}
+
+.stitch_fn_hero1 .hero1_menu {
+	margin-bottom:2rem;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+
+.stitch_fn_hero1 .hero1_menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.stitch_fn_hero1 .hero1_menu p {
+	margin:0 ;
+	padding:0;
+	font-size:0.875;
+	font-weight:bold;
+	color:#DADDE3;
+}
+.stitch_fn_hero1 .hero1_menu ul li {
+	float: left;
+	position: relative;
+	margin-right: 1.75rem;
+}
+.stitch_fn_hero1 .hero1_menu ul li:after {
+	width: 0.75rem;
+	height: 1px;
+	background-color: #5A6378;
+	position: absolute;
+	left: 100%;
+	margin-left: 0.5rem;
+	content: '';
+	top: 50%;
+}
+.stitch_fn_hero1 .hero1_menu ul li:last-child {
+	margin-right: 0;
+}
+.stitch_fn_hero1 .hero1_menu ul li:last-child:after {
+	display: none;
+}
+.stitch_fn_hero1 .hero1_menu a {
+	text-decoration: none;
+	color: #979fb1;
+	font-size: 1.25rem;
+	line-height: 24px;
+	font-weight:600;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	display: block;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+}
+.stitch_fn_hero1 .hero1_menu a:hover {
+	color: #00e3b2;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+}
+
+.stitch_fn_hero1 .hero1_right {
+	width: 60%;
+	position: relative;
+	margin: 0 auto;
+	z-index: 1;
+}
+
+.stitch_fn_hero1 .hero1_right img {
+	opacity: 0;
+	min-width: 100%;
+}
+
+.stitch_fn_hero1 .hero1_right .hero1_border {
+	padding: 30px;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.stitch_fn_hero1 .hero1_right .hero1_img {
+	padding: 30px;
+	width: 100%;
+	position: relative;
+	z-index: 5;
+}
+
+.stitch_fn_hero1 .hero1_right .hero1_img .stitch_fn_abs_img {
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+.stitch_fn_hero1 .hero1_right .hero1_border:after {
+	content: '';
+	position: absolute;
+	width: 30%;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	bottom: 0;
+}
+
+.stitch_fn_hero1 .hero1_right .hero1_border:before {
+	content: '';
+	position: absolute;
+	width: 30%;
+	top: 0;
+	right: 0;
+	background-color: transparent;
+	bottom: 0;
+}
+
+.hero1_btn {
+	margin-bottom: 2rem;
+}
+
+
+#flip {
+	height:72px;
+	overflow:hidden;
+  }
+  
+  #flip > div > div {
+	height:100%;
+	margin-bottom:42px;
+	display:inline-block;
+	line-height:1;
+  }
+  
+  #flip div:first-child {
+	animation: show 5s linear infinite;
+  }
+  
+  #flip div div {
+	background:#0B2721;
+	border:1px solid #0B2721;
+	border-radius:0.5rem;
+	padding: 0.75rem 0.5rem;
+  }
+
+  #flip div:first-child div {
+  }
+
+
+  #flip div:nth-child(2) div {
+	margin-bottom: 34px;
+  }
+  #flip div:last-child div {
+	margin-top:-2rem;
+	
+  }
+  
+  @keyframes show {
+	0% {margin-top:-270px;}
+	5% {margin-top:-180px;}
+	33% {margin-top:-180px;}
+	38% {margin-top:-90px;}
+	66% {margin-top:-90px;}
+	71% {margin-top:0px;}
+	99.99% {margin-top:0px;}
+	100% {margin-top:-270px;}
+  }
+
+/*---------------------------------------------------*/
+/*	hero5
+/*---------------------------------------------------*/
+#hero5 {
+	padding: 160px 0 80px 0;
+	background: rgb(29,100,84,1);
+	background: linear-gradient(0deg, rgba(29,100,84,1) 0%, rgba(28,29,31,1) 100%);
+}
+
+.stitch_fn_hero5 {
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+.stitch_fn_hero5 .hero5_in {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	background-image: none;
+	background-size:auto 100%; 
+	background-position:right bottom; 
+	background-repeat:no-repeat;
+}
+.stitch_fn_hero5 .hero5_left {
+	width: 40%;
+}
+.stitch_fn_hero5 .hero5_left .l_inner {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.stitch_fn_wrapper .stitch_fn_main_button {
+	margin: 0;
+	padding: 0;
+	outline-color: transparent;
+	outline-width: 0;
+	box-shadow: none;
+	border: none;
+	display: block;
+	float: left;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	text-decoration: none;
+	color: #00e3b2;
+	background-color:rgba(0, 228, 178,0.08);
+	backdrop-filter:blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	font-size: 1.25rem;
+	font-weight: 600;
+	border-radius: 1rem;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	position: relative;
+	perspective: 1000px;
+    transform: translateZ(0px);
+}
+.stitch_fn_wrapper .stitch_fn_main_button:hover {
+	border-color: transparent;
+}
+.stitch_fn_wrapper .stitch_fn_main_button span {
+	line-height: 1.25;
+	display: block;
+	transition: all .2s ease;
+	float: left;
+	padding: 0.75rem 2rem;
+	border: 2px solid #00e3b2;
+	border-radius: 1rem;
+}
+.stitch_fn_wrapper .stitch_fn_main_button span:nth-child(1) {
+	transition: all .2s .2s ease;
+}
+.stitch_fn_wrapper .stitch_fn_main_button span:nth-child(2) {
+	opacity: 0;
+	transform: scale(0.96);
+	position: absolute;
+	top: 0;
+}
+.stitch_fn_wrapper .stitch_fn_main_button:hover span:nth-child(1) {
+	opacity: 0;
+	transform: scale(.96);
+	transition: all .1s ease;
+}
+.stitch_fn_wrapper .stitch_fn_main_button:hover span:nth-child(2) {
+	transform: scale(1) translateZ(0);
+	transition: all .1s .1s ease;
+	opacity: 1;
+}
+.stitch_fn_hero5 .hero5_left .hero5_btn {
+	margin-bottom: 4rem;
+}
+
+.stitch_fn_hero5 .hero5_menu {
+	margin-bottom:2rem;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+
+.stitch_fn_hero5 .hero5_menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.stitch_fn_hero5 .hero5_menu p {
+	margin:0 ;
+	padding:0;
+	font-size:0.875;
+	font-weight:bold;
+	color:#DADDE3;
+}
+.stitch_fn_hero5 .hero5_menu ul li {
+	float: left;
+	position: relative;
+	margin-right: 1.75rem;
+}
+.stitch_fn_hero5 .hero5_menu ul li:after {
+	width: 0.75rem;
+	height: 1px;
+	background-color: #5A6378;
+	position: absolute;
+	left: 100%;
+	margin-left: 0.5rem;
+	content: '';
+	top: 50%;
+}
+.stitch_fn_hero5 .hero5_menu ul li:last-child {
+	margin-right: 0;
+}
+.stitch_fn_hero5 .hero5_menu ul li:last-child:after {
+	display: none;
+}
+.stitch_fn_hero5 .hero5_menu a {
+	text-decoration: none;
+	color: #979fb1;
+	font-size: 1.25rem;
+	line-height: 24px;
+	font-weight:600;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	display: block;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+}
+.stitch_fn_hero5 .hero5_menu a:hover {
+	color: #00e3b2;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+}
+
+.stitch_fn_hero5 .hero5_right {
+	width: 60%;
+	position: relative;
+	margin: 0 auto;
+	z-index: 1;
+}
+
+.stitch_fn_hero5 .hero5_right img {
+	opacity: 0;
+	min-width: 100%;
+}
+
+.stitch_fn_hero5 .hero5_right .hero5_border {
+	padding: 30px;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.stitch_fn_hero5 .hero5_right .hero5_img {
+	padding: 30px;
+	width: 100%;
+	position: relative;
+	z-index: 5;
+}
+
+.stitch_fn_hero5 .hero5_right .hero5_img .stitch_fn_abs_img {
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+.stitch_fn_hero5 .hero5_right .hero5_border:after {
+	content: '';
+	position: absolute;
+	width: 30%;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	bottom: 0;
+}
+
+.stitch_fn_hero5 .hero5_right .hero5_border:before {
+	content: '';
+	position: absolute;
+	width: 30%;
+	top: 0;
+	right: 0;
+	background-color: transparent;
+	bottom: 0;
+}
+
+
+/*---------------------------------------------------*/
+/*	04) Shortcode: Divider
+/*---------------------------------------------------*/
+.stitch_fn_divider{
+	margin: 4rem 0;
+	width: 100%;
+	position: relative;
+	height: 1px;
+	background-color: #14463a;
+	float: left;
+	clear: both;
+}
+/*---------------------------------------------------*/
+/*	05) Shortcode: Title and Paragraphs
+/*---------------------------------------------------*/
+.stitch_fn_title {
+	width: 100%;
+	float: left;
+	clear: both;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+
+.stitch_fn_title h5{
+	margin: 0 0 0.25rem 0;
+	padding: 0;
+	font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-size: 1.25rem;
+	letter-spacing: 0;
+	font-weight: 700;
+}
+
+.stitch_fn_title h3{
+	margin: 0 0 1.25rem 0;
+	padding: 0;
+	font-size: 2.5rem;
+	line-height: 1.25;
+	color: #f7f8f9;
+	letter-spacing: -0.25px;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-weight: 800;
+}
+
+.stitch_fn_desc p{
+	margin: 0 0 4rem 0;
+	padding: 0;
+	font-size: 1.25rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #DADDE3;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+
+/*---------------------------------------------------*/
+/*	06) Shortcode: Service
+/*---------------------------------------------------*/
+
+.stitch_fn_hero4{
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.stitch_fn_hero4 ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	margin-left: -30px;
+	min-width: 100%;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.stitch_fn_hero4 ul li{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	width: 25%;
+	padding-left: 2rem;
+	padding-top: 1rem;
+	margin-bottom: 2rem;
+}
+
+.stitch_fn_hero4 .s_item{
+	width: 100%;
+	float: left;
+	clear: both;
+	height: 100%;
+	border-radius: 2rem;
+	border: 2px solid #383e4b;
+	background: #27292E;
+	padding: 1rem 2.5rem;
+	position: relative;
+	text-align: center;
+	transition: all .3s ease;
+	display:flex;
+	flex-direction:column;
+}
+
+.stitch_fn_hero4 .s_item:hover{
+	border: 2px solid rgba(0, 228, 178,0.8);
+	background: #27292E;
+	box-shadow: 0px 0px 1rem rgba(0,228,178,0.32);
+	transform: scale(1.04);
+	-webkit-transform: scale(1.04); /* 크롬, 사파리 */
+	-moz-transform: scale(1.04);  /* 파이어폭스 */
+	-ms-transform: scale(1.04); /* IE */
+	-o-transform: scale(1.04);  /* 오페라 */
+	z-index:6;
+}
+
+.stitch_fn_hero4 .s_item .s_tag{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.s_tag img {
+	margin: 0 0.25rem;
+}
+
+.stitch_fn_hero4 .s_item h3{
+	margin: 0;
+	padding: 0;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	color: #f7f8f9;
+	font-size: 1.5rem;
+	line-height:1.25;
+	letter-spacing: 0;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+}
+.stitch_fn_hero4 .s_item p {
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-weight: 600;
+	line-height: 1.25;
+	letter-spacing: 0;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+
+.stitch_fn_hero4 .s_item .s_desc {
+	margin-bottom: 1.25rem;
+}
+
+.stitch_fn_hero4 .s_item .s_desc span.on {
+	width: 0.5rem;
+	height: 0.5rem;
+	display: inline-block;
+	background-color: #00e3b2;
+	border-radius:0.5rem;
+	margin-right:0.25rem;
+}
+
+.stitch_fn_hero4 .s_item .s_desc span.off {
+	width: 0.5rem;
+	height: 0.5rem;
+	display: inline-block;
+	background-color: #5A6378;
+	border-radius:0.5rem;
+	margin-right:0.25rem;
+}
+
+.stitch_fn_hero4 .s_item_next{
+	width: 100%;
+	float: left;
+	clear: both;
+	height: 100%;
+	border-radius: 2rem;
+	border: 2px dashed #383e4b;
+	background:none;
+	padding: 1rem 2.5rem;
+	position: relative;
+	text-align: center;
+	transition: all .3s ease;
+	display:flex;
+	flex-direction:column;
+	-ms-flex-direction: column;
+	justify-content: flex-start;
+}
+
+.stitch_fn_hero4 .s_item_next:hover{
+}
+
+.stitch_fn_hero4 .s_item_next img {
+	opacity: 0.4;
+}
+
+.stitch_fn_hero4 .s_item_next .s_tag{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.stitch_fn_hero4 .s_item_next h3{
+	margin: 0;
+	padding: 0;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	color: #979fb1;
+	font-size: 2rem;
+	letter-spacing: 0;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+.stitch_fn_hero4 .s_item_next p {
+	font-size: 1rem;
+	line-height: 1.5;
+	letter-spacing: 0;
+	font-weight:400;
+	margin: 0;
+	padding: 0;
+	color: #aab1b8;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+.stitch_fn_hero4 .s_item_next .s_desc {
+	margin-bottom: 1.25rem;
+}
+
+.stitch_fn_hero4 .s_item_next .s_desc span {
+	width: 0.5rem;
+	height: 0.5rem;
+	display: inline-block;
+	background-color: #00e3b2;
+	border-radius:0.5rem;
+	margin-right:0.25rem;
+}
+
+
+.stitch_fn_hero2{
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.stitch_fn_hero2 ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	margin-left: -30px;
+	min-width: 100%;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.stitch_fn_hero2 ul li{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	width: 33.3333%;
+	padding-left: 2rem;
+	padding-top: 1rem;
+	margin-bottom: 2rem;
+}
+
+.s_item{
+	width: 100%;
+	float: left;
+	clear: both;
+	height: 100%;
+	border-radius: 0.5rem;
+	border: 1px solid rgba(20,70,58,1);	
+	padding: 5rem 2.5rem 20rem 2.5rem;
+	position: relative;
+	transition: all .3s ease;
+	display:flex;
+	flex-direction:column;
+	-ms-flex-direction: column;
+	justify-content: flex-start;
+}
+
+.s_item:hover{
+	background-size:102% auto!important;
+	background-color: #0e322a;
+	box-shadow: 0 1rem 1rem rgba(0,0,0,0.32);
+	transform: translate3d(0px,-0.4px,0px);
+}
+
+.s_item .s_title{
+	display:grid;
+}
+
+.s_item .s_title h3 {
+	margin: 0;
+	padding: 0;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	color: #f7f8f9;
+	font-size: 2rem;
+	letter-spacing: 0;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+
+.s_item .s_title p {
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-weight: 600;
+	line-height: 1.5;
+	letter-spacing: 0;
+	color:#00e3b2;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+
+.s_item .s_title .s_title_number {
+	font-weight:900!important;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+
+.s_item .s_desc {
+	display:grid;
+	line-height:1.5;
+	color:#C4C8D3;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+}
+
+.s_btn {
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:100%;
+	margin-bottom:2rem;
+	display:inline-flex;
+	text-align:center;
+	justify-content:center;
+}
+
+.s_btn a {
+	margin:0 1rem;
+	width:100%;
+	padding:0.75rem 1rem;
+	font-size: 1rem;
+	font-weight:bold;
+	border:1.5px solid rgba(0,227,178,0.2);
+	border-radius:0.75rem;
+	color: #00e3b2;
+	background:rgba(20,70,58,1);
+	background: -moz-linear-gradient(180deg, rgba(20,70,58,0.64) 0%, rgba(13,39,38,0.2) 100%);
+	background: -webkit-linear-gradient(180deg, rgba(20,70,58,0.64) 0%, rgba(13,39,38,0.2) 100%);
+	background: linear-gradient(180deg, rgba(20,70,58,0.64) 0%, rgba(13,39,38,0.2) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#14463a",endColorstr="#0d2726",GradientType=1);
+	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(8px);
+	letter-spacing: 0;
+	line-height:1;
+	text-decoration:none!important;
+	cursor: pointer;
+	box-shadow:none;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;s
+}
+
+.s_btn a:hover {
+	border:1.5px solid rgba(0,227,178,0.4);
+	background:rgba(20,70,58,1);
+	background: -moz-linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
+	background: -webkit-linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
+	background: linear-gradient(180deg, rgba(20,70,58,0.8) 0%, rgba(13,39,38,0.8) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#14463a",endColorstr="#0d2726",GradientType=1);
+	box-shadow:0px 4px 8px rgba(0, 0, 0, 0.2);
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+	transform: translate3d(0px,-0.4px,0px);
+}
+
+.s_btn_neutral {
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:100%;
+	margin-bottom:2rem;
+	display:inline-flex;
+	text-align:center;
+	justify-content:center;
+}
+
+.s_btn_neutral a {
+	margin:0 1rem;
+	width:100%;
+	padding:0.75rem 1rem;
+	font-size: 1rem;
+	font-weight:bold;
+	border:1.5px solid rgba(90,99,120,0.2);
+	border-radius:0.75rem;
+	color: #C4C8D3;
+	background: rgb(56,62,75);
+	background: -moz-linear-gradient(180deg, rgba(56,62,75,0.4) 0%, rgba(38,40,44,0.2) 100%);
+	background: -webkit-linear-gradient(180deg, rgba(56,62,75,0.4) 0%, rgba(38,40,44,0.2) 100%);
+	background: linear-gradient(180deg, rgba(56,62,75,0.4) 0%, rgba(38,40,44,0.2) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#383e4b",endColorstr="#1c1d1f",GradientType=1);
+	letter-spacing: 0;
+	line-height:1;
+	text-decoration:none!important;
+	cursor: pointer;
+	box-shadow:none;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;	
+}
+
+.s_btn_neutral a:hover {
+	border:1.5px solid rgba(151,159,177,0.4);
+	background: rgb(56,62,75);
+	background: -moz-linear-gradient(180deg, rgba(56,62,75,0.8) 0%, rgba(28,29,31,1) 100%);
+	background: -webkit-linear-gradient(180deg, rgba(56,62,75,0.8) 0%, rgba(28,29,31,1) 100%);
+	background: linear-gradient(180deg, rgba(56,62,75,0.8) 0%, rgba(28,29,31,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#383e4b",endColorstr="#1c1d1f",GradientType=1);
+	box-shadow:0px 4px 8px rgba(0, 0, 0, 0.2);
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+	text-shadow: 0px 4px 8px rgba(11,39,33,0.8);
+	transform: translate3d(0px,-0.4px,0px);
+}
+
+.stitch_fn_hero3 {
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+.swiper-container-wrapper--timeline .swiper-slide {
+	display: flex;
+	background: #26282C;
+	min-height: 20rem;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1rem;
+  }
+  .swiper-container-wrapper--timeline .swiper-slide .container {
+	padding: 0;
+	width: 100%;
+  }
+  .swiper-container-wrapper--timeline .swiper-slide .title {
+	font-size: 1.25rem;
+	opacity: 0;
+	transition: 0.5s ease 0.5s;
+  }
+  .swiper-container-wrapper--timeline .swiper-slide-active .title {
+	opacity: 1;
+  }
+  .swiper-container-wrapper--timeline .swiper-pagination-progressbar {
+	position: relative;
+	margin-bottom: 2rem;
+	background-color: transparent;
+	height: 4px;
+	border-bottom: 1px solid #383e4b;
+	width: 75%;
+  }
+  .swiper-container-wrapper--timeline .swiper-pagination-progressbar-fill {
+	background-color: #00e3b2;
+	height: 2px;
+	top: 2px;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom {
+	position: relative;
+	list-style: none;
+	margin: 1rem 0;
+	padding: 0;
+	display: flex;
+	line-height: 1.25;
+	bottom: 0;
+	z-index: 11;
+	width: 75%;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch {
+	position: relative;
+	width: 100%;
+	height: 0.875rem;
+	line-height: 0.875rem;
+	display: block;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch .switch-title {
+	position: absolute;
+	right: 0;
+	transform: translateX(50%);
+	transition: 0.2s all ease-in-out;
+	transition-delay: 0s;
+	cursor: pointer;
+	z-index: 1;
+	font-weight:600;
+	color:#979fb1;
+}
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch .switch-title:after {
+	position: absolute;
+	top: calc(100% + 19px);
+	right: 50%;
+	transform: translateX(50%) translateY(-50%);
+	width: 12px;
+	height: 12px;
+	background: #00e3b2;
+	border-radius: 2rem;
+	content: "";
+	transition: 0.2s all ease-in-out;
+	transition-delay: 0s;
+	z-index: 1;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch.active .switch-title {
+	font-weight: 600;
+	transition-delay: 0.4s;
+	color:#00e3b2;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch.active .switch-title:after {
+	background: #00e3b2;
+	width: 1rem;
+	height: 1rem;
+	transition-delay: 0.4s;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch.active ~ .swiper-pagination-switch .switch-title {
+	color: #5A6378;
+	font-weight: 600;
+  }
+
+  .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch.active ~ .swiper-pagination-switch .switch-title:after {
+	background: #383e4b;
+  }
+
+#project .stitch_fn_b2c {
+	margin-bottom: 100px;
+}
+
+.stitch_fn_b2c{
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+#project .stitch_fn_b2c img{
+	margin:1rem 0;
+	padding:0;
+	height:4rem;
+	width:auto;
+}
+
+.stitch_fn_b2c ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	margin-left: -30px;
+	min-width: 100%;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.stitch_fn_b2c ul li{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	width: 33.3333%;
+	padding-left: 30px;
+	padding-top: 16px;
+	margin-bottom: 30px;
+}
+.stitch_fn_b2c .s_item{
+	width: 100%;
+	float: left;
+	clear: both;
+	height: 100%;
+	border-radius: 0.5rem;
+	padding: 5rem 2.5rem 10rem 2.5rem;
+	position: relative;
+	transition: all .3s ease;
+	display:grid;
+}
+
+.stitch_fn_b2c .s_item:hover{
+	background-size:108%!important;	
+	transform: translate3d(0px,-5px,0px);
+}
+.stitch_fn_b2c .s_item .s_counter{
+	width: 50px;
+	height: 90px;
+	display: block;
+	left: 46px;
+	top: -16px;
+	position: absolute;
+	background-color: #1e1427;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.stitch_fn_b2c .s_item .s_counter span{
+	color: #eee;
+	font-size: 16px;
+	line-height: 34px;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	width: 100%;
+	max-width: 100%;
+	padding: 0 2px;
+	position: absolute;
+	bottom: 0;
+	letter-spacing: 0;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.stitch_fn_b2c .s_item h3{
+	margin: 0;
+	padding: 0;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	color: #dee0e3;
+	font-size: 1.5rem;
+	letter-spacing: 0;
+	font-weight:600;
+	margin-bottom: 2rem;
+}
+.stitch_fn_b2c .s_item p{
+	font-size: 1rem;
+	line-height: 1.5;
+	letter-spacing: 0;
+	margin: 0;
+	padding: 0;
+	color: #dee0e3;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-weight: 400;
+}
+
+.stitch_fn_b2c .s_item .s_btn a{
+	margin-bottom:0.725rem;
+	display: block;
+	float: left;
+	font-size: 1rem;
+	color: #00e3b2;
+	line-height: 24px;
+	text-decoration: none;
+	
+}
+
+/*---------------------------------------------------*/
+/*	07) Shortcode: Skills
+/*---------------------------------------------------*/
+.stitch_fn_skills{
+	width: 100%;
+	float: left;
+	clear: both;
+	max-width: 808px;
+	transform: translateZ(0);
+}
+.stitch_fn_skills .s_title{
+	margin-bottom: 46px;
+}
+.stitch_fn_skills .s_title h3{
+	margin: 0;
+	padding: 0;
+	font-size: 2rem;
+	color: #eee;
+	line-height: 40px;
+	font-weight: bold;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+.stitch_fn_skills .s_list ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.stitch_fn_skills .s_list{
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.stitch_fn_skills .s_list ul li{
+	float: left;
+	margin: 0;
+	padding: 0;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.stitch_fn_skills .s_list .sl_item{
+	width: 100%;
+	float: left;
+	clear: both;
+	padding: 0 20px;
+	height: 45px;
+	line-height: 45px;
+	border: 1px solid rgba(255,255,255,.1);
+	border-radius: 3px;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-size: 16px;
+	color: #eeeeee;
+	letter-spacing: 0;
+}
+.stitch_fn_skills .s_list .sl_item label{
+	min-width: inherit;
+    margin-right: 40px;
+    position: relative;
+    font-weight: 300;
+    display: block;
+	float: left;
+}
+
+.stitch_fn_skills .s_list .sl_item .text{
+	color: #aab1b8;
+}
+.stitch_fn_skills .s_list .sl_item label:after{
+	content: '';
+    width: 20px;
+    height: 1px;
+    background-color: #f1f2f3;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: 10px;
+    margin-top: -1px;
+}
+
+.stitch_fn_skills .s_list .sl_item svg {
+	color: #f1f2f3;
+}
+
+#information {
+	padding: 10rem 0;
+	background-color: #1C1D1F;
+}
+
+#hero2 {
+	padding: 6rem 0;
+	background-color: #1C1D1F;
+}
+#hero3{
+	padding: 6rem 0;
+	background-color: #1c1d1f;
+}
+
+#hero4 {
+	padding: 6rem 0;
+	background: rgb(38,40,44);
+	background: -moz-linear-gradient(0deg, rgba(38,40,44,1) 0%, rgba(28,29,31,1) 100%);
+	background: -webkit-linear-gradient(0deg, rgba(38,40,44,1) 0%, rgba(28,29,31,1) 100%);
+	background: linear-gradient(0deg, rgba(38,40,44,1) 0%, rgba(28,29,31,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#26282c",endColorstr="#1c1d1f",GradientType=1);
+}
+
+#portfolio .stitch_fn_title{
+	margin-bottom: 2rem;
+}
+#project .stitch_fn_title{
+	margin-bottom: 2rem;
+}
+#b2b{
+	padding: 10rem 0;
+	background-color: #1C1D1F;
+}
+
+/*---------------------------------------------------*/
+/*	08) Shortcode: Portfolio Grid
+/*---------------------------------------------------*/
+.stitch_fn_portfolio_grid{
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.stitch_fn_portfolio_grid ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-left: -2rem;
+}
+.stitch_fn_portfolio_grid ul li{
+	width: 33.3333%;
+	float: left;
+	margin-bottom: 2rem;
+	padding-left: 2rem;
+}
+.stitch_fn_portfolio_grid ul li.tmwide25{width: 25%;}
+.stitch_fn_portfolio_grid ul li.tmwide33{width: 33.3333%;}
+.stitch_fn_portfolio_grid ul li.tmwide50{width: 50%;}
+.stitch_fn_portfolio_grid ul li.tmwide66{width: 66.6666%;}
+.stitch_fn_portfolio_grid ul li.tmwide75{width: 75%;}
+.stitch_fn_portfolio_grid ul li.tmwide100{width: 100%;}
+
+.stitch_fn_portfolio_grid .list_item{
+	border-radius: 0.5rem;
+}
+.stitch_fn_portfolio_grid .list_item,
+.stitch_fn_portfolio_grid .list_item .img_holder{
+	width: 100%;
+	float: left;
+	clear: both;
+	position: relative;
+	overflow: hidden;
+}
+.stitch_fn_portfolio_grid .list_item .img_holder img{
+	min-width: 100%;
+	opacity: 0;
+}
+.stitch_fn_portfolio_grid .list_item .title_holder{
+	width: 500px;
+	max-width: 88%;
+	position: absolute;
+	z-index: 7;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0) scale(0.6);
+	padding: 1.25rem;
+	text-align: center;
+	opacity: 0;
+	transition: transform .4s ease, opacity 0.6s ease;
+}
+.stitch_fn_portfolio_grid .list_item .title_holder .title_abs{
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	transform: scale(1.25) translateZ(0);
+	transition: all 1.4s ease;
+}
+.stitch_fn_portfolio_grid .list_item .title_holder .title_abs div{
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.88);
+	border-radius: 0.5rem;
+	position: absolute !important;
+	transform: translate(0px,0px) !important;
+
+}
+.stitch_fn_portfolio_grid .list_item:hover .title_holder{
+	transform: translate3d(-50%,-50%,0) scale(1);
+	opacity: 1;
+}
+.stitch_fn_portfolio_grid .list_item:hover .title_holder .title_abs{
+	transform: scale(1) translateZ(0);
+}
+.stitch_fn_portfolio_grid .list_item .title_cat,
+.stitch_fn_portfolio_grid .list_item .title_name{
+	transition: all .3s ease;
+}
+.stitch_fn_portfolio_grid .list_item:hover .title_cat,
+.stitch_fn_portfolio_grid .list_item:hover .title_name{
+	transform: translateZ(100px) !important;
+}
+
+.title_name h3{
+	color:#fff;
+}
+.stitch_fn_portfolio_grid .list_item .title_holder p{
+	margin: 0;
+	padding: 0;
+	color: #aab1b8;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-size: 1rem;
+	letter-spacing: 0;
+	margin-bottom: 4px;
+}
+.stitch_fn_portfolio_grid .list_item .title_holder p a{
+	text-decoration: none;
+	color: inherit;
+}
+.stitch_fn_portfolio_grid .list_item .title_holder p a:after{
+	background-color: #aab1b8;
+}
+.stitch_fn_portfolio_grid .list_item .title_holder h3{
+	margin: 0;
+	padding: 0;
+	font-size: 1.5rem;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	letter-spacing: 0;
+	font-weight: 500;
+}
+.stitch_fn_portfolio_grid .list_item .title_holder h3 a{
+	text-decoration: none;
+	transition: all .3s ease;
+}
+.stitch_fn_portfolio_grid .list_item .title_holder h3 a:hover{
+	color: #3062d7;
+}
+.stitch_fn_portfolio_grid ul li.tmwide50 .list_item .title_holder h3,
+.stitch_fn_portfolio_grid ul li.tmwide66 .list_item .title_holder h3,
+.stitch_fn_portfolio_grid ul li.tmwide75 .list_item .title_holder h3,
+.stitch_fn_portfolio_grid ul li.tmwide100 .list_item .title_holder h3{
+	font-size: 1.5rem;
+}
+
+/*---------------------------------------------------*/
+/*	09) Shortcode: Contact me
+/*---------------------------------------------------*/
+.stitch_fn_contactme{
+	width: 100%;
+	float: left;
+	clear: both;
+	max-width: 610px;
+	margin-bottom: 120px;
+	margin-top: 42px;
+}
+.stitch_fn_contactme p{
+	margin: 0;
+	padding: 0;
+	font-size: 22px;
+	line-height: 30px;
+	color: #aab1b8;
+	letter-spacing: 0;
+}
+.stitch_fn_contactme p.text{
+	margin-bottom: 43px;
+}
+/*---------------------------------------------------*/
+/*	10) Shortcode: Experience
+/*---------------------------------------------------*/
+.stitch_fn_experience,
+.stitch_fn_experience .e_list,
+.stitch_fn_experience .e_title{
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.stitch_fn_experience .e_title h3{
+	margin: 0;
+	padding: 0;
+	font-size: 30px;
+	line-height: 40px;
+	color: #eee;
+	letter-spacing: 0;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-weight: 400;
+	margin-bottom: 31px;
+}
+.stitch_fn_experience .e_list ul,
+.stitch_fn_experience .e_list li{
+	width: 100%;
+	float: left;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.stitch_fn_experience .e_list .e_item{
+	padding: 22px 0 23px;
+	width: 100%;
+	float: left;
+	clear: both;
+	border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.stitch_fn_experience .e_list .e_item span{
+	float: left;
+	padding-right: 10px;
+	font-size: 18px;
+	letter-spacing: 0;
+	color: #aab1b8;
+}
+.stitch_fn_experience .e_list .e_item span.e_item_a{
+	width: 20%;
+}
+
+.stitch_fn_experience .e_list .e_item span.e_item_b{
+	width:80%;
+	color: #eee;
+}
+.stitch_fn_experience .e_list ul li:last-child .e_item{
+	padding-bottom: 10px;
+	border-bottom: none;
+}
+/*---------------------------------------------------*/
+/*	11) Shortcode: Review
+/*---------------------------------------------------*/
+.stitch_fn_reviews{
+	width: 100%;
+	float: left;
+	clear: both;
+	margin-top: 98px;
+}
+.stitch_fn_reviews .r_title h3{
+	margin: 0;
+    padding: 0;
+    font-size: 30px;
+    line-height: 40px;
+    color: #eee;
+    letter-spacing: 0;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 400;
+    margin-bottom: 45px;
+}
+.stitch_fn_reviews .r_item{
+	padding-top: 16px;
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.stitch_fn_reviews .r_item .r_desc,
+.stitch_fn_reviews .r_item .r_item_in,
+.stitch_fn_reviews .r_item .r_reviewer{
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.stitch_fn_reviews .r_item .r_item_in{
+	border: 4px solid rgba(255,255,255,.05);
+	border-radius: 5px;
+	position: relative;
+	padding: 113px 45px 45px 45px;
+}
+.stitch_fn_reviews .r_item:hover{
+	transform: translate3d(0px,-5px,0px);
+}
+.stitch_fn_reviews .r_item:hover .r_item_in{
+	border-color: rgba(255,255,255,.15);
+}
+
+.stitch_fn_reviews .r_item .r_quote{
+	width: 50px;
+    height: 90px;
+    display: block;
+    left: 46px;
+    top: -16px;
+    position: absolute;
+    background-color: #1e1427;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.stitch_fn_reviews .r_item .r_quote .stitch_fn_svg{
+	position: absolute;
+	width: 28px;
+	height: 28px;
+	bottom: 14px;
+	left: 50%;
+	margin-left: -14px;
+	color: #3062d7;
+}
+.stitch_fn_reviews .r_item .r_review{
+	margin-bottom: 32px;
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.stitch_fn_reviews .r_item .r_desc p{
+	margin: 0;
+	padding: 0;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	letter-spacing: 0;
+	font-size: 16px;
+	line-height: 24px;
+	
+}
+.stitch_fn_reviews .r_item .r_desc{
+	margin-bottom: 44px;
+}
+.stitch_fn_reviews .r_item .r_reviewer{
+	display: flex;
+	flex-direction: column;
+	min-height: 70px;
+	justify-content: center;
+}
+.stitch_fn_reviews .r_item .r_reviewer{
+	padding-left: 90px;
+	position: relative;
+}
+.stitch_fn_reviews .r_item .r_reviewer .abs_img{
+	width: 70px;
+	height: 70px;
+	display: block;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 100%;
+}
+.stitch_fn_reviews .r_item .r_reviewer h3{
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	color: #eee;
+	letter-spacing: 0;
+	font-family: 'Rubik';
+	font-weight: 400;
+	margin-bottom: 3px;
+}
+.stitch_fn_reviews .r_item .r_reviewer h5{
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	color: #aab1b8;
+	letter-spacing: 0;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-weight: 400;
+}
+.stitch_fn_reviews .swiper-wrapper{
+	margin-bottom: 45px;
+}
+.stitch_fn_reviews .r_item{
+	opacity: .3;
+	transition: all .5s ease;
+}
+.stitch_fn_reviews .r_item.fn_vision{
+	opacity: 1;
+}
+.stitch_fn_reviews.ready .swiper-container{
+	overflow: visible;
+}
+.stitch_fn_swiper_progress{
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.stitch_fn_swiper_progress .my_pagination_in{
+	float: left;
+	position: relative;
+}
+.stitch_fn_swiper_progress span{
+	display: block;
+	float: left;
+	font-size: 18px;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	letter-spacing: 0;
+	color: #eee;
+	height: 22px;
+	line-height: 22px;
+}
+.stitch_fn_swiper_progress .pagination_progress{
+	width: 100px;
+	margin: 0 20px;
+	position: relative;
+}
+.stitch_fn_swiper_progress .pagination_progress .all{
+	height: 1px;
+	width: 100%;
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	top: 50%;
+	left: 0;
+	background-color: #333;
+}
+.stitch_fn_swiper_progress .pagination_progress .all span{
+	height: 1px;
+	width: 100%;
+	background-color: #aab1b8;
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	transform-origin: left top;
+	transform: scale(0);
+	transition: all .3s ease;
+}
+
+
+#portfolio{
+	padding: 10rem 0;
+	background-color: #000;
+}
+
+#project{
+	padding: 10rem 0;
+	background-color: #000;
+}
+
+/*---------------------------------------------------*/
+/*	13) Shortcode: Blog List
+/*---------------------------------------------------*/
+.stitch_fn_blog_list{
+	width: 100%;
+	float: left;
+	clear: both;
+	margin-top: 79px;
+}
+.stitch_fn_blog_list li,
+.stitch_fn_blog_list ul{
+	width: 100%;
+	float: left;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.stitch_fn_blog_list .blog_item{
+	width: 100%;
+	float: left;
+	clear: both;
+	position: relative;
+	padding: 50px 0;
+}
+.stitch_fn_blog_list .blog_item:after{
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255,255,255,.2);
+	height: 1px;
+}
+.stitch_fn_blog_list li:last-child .blog_item:after{
+	display: none;
+}
+.stitch_fn_blog_list .blog_item_in{
+	width: 100%;
+	float: left;
+	clear: both;
+	position: relative;
+	padding-left: 280px;
+}
+.stitch_fn_blog_list .blog_item .b_counter{
+	width: 100px;
+	height: 100px;
+	display: block;
+	padding: 0 5px;
+	text-align: center;
+	line-height: 100px;
+	border-radius: 100%;
+	background-color: #1e1427;
+	font-family: 'Rubik';
+	font-size: 30px;
+	letter-spacing: 0;
+	margin: 0;
+	color: #3062d7;
+	font-weight: 400;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.stitch_fn_blog_list .blog_item .b_counter:after{
+	content: '';
+	position: absolute;
+	width: 80px;
+	height: 2px;
+	left: 100%;
+	margin-left: 50px;
+	top: 50%;
+	margin-top: -1px;
+	background-color: rgba(255,255,255,.1);
+	display: block;
+}
+.stitch_fn_blog_list .title_wrapper{
+	width: 100%;
+	float: left;
+	clear: both;
+	position: relative;
+	padding-right: 50px;
+	padding-left: 170px;
+	min-height: 100px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.stitch_fn_blog_list .title_wrapper .abs_img{
+	width: 120px;
+	height: 100px;
+	position: absolute;
+	border-radius: 5px;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.stitch_fn_blog_list .title_wrapper .b_arrow{
+	width: 50px;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.stitch_fn_blog_list .title_wrapper .b_arrow a{
+	text-decoration: none;
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.stitch_fn_blog_list .title_wrapper .b_arrow .stitch_fn_svg{
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+	left: 0;
+	color: #fff;
+	transition: all .3s ease;
+}
+.stitch_fn_blog_list .title_wrapper .title_holder p{
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	letter-spacing: 0;
+	margin-bottom: 3px;
+	color: #aab1b8;
+}
+.stitch_fn_blog_list .title_wrapper .title_holder h3{
+	margin: 0;
+	padding: 0;
+	font-size: 30px;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	letter-spacing: 0;
+	font-weight: 400;
+	line-height: 1.2;
+	color:#dee0e3;
+}
+.stitch_fn_blog_list .title_wrapper .title_holder h3 a{
+	color: #dee0e3;
+	text-decoration: none;
+	font-family: inherit;
+	letter-spacing: inherit;
+	font-weight: inherit;
+}
+.stitch_fn_blog_list .title_wrapper .b_arrow .stitch_fn_svg,
+.stitch_fn_blog_list .title_wrapper,
+.stitch_fn_blog_list .title_wrapper .abs_img,
+.stitch_fn_blog_list .blog_item .b_counter,
+.stitch_fn_blog_list .title_wrapper .title_holder h3 a,
+.stitch_fn_blog_list .title_wrapper .title_holder p,
+.stitch_fn_blog_list .blog_item .blog_item_in{
+	transform: translate3d(0px,0px,0px);
+-webkit-transition: all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+   -moz-transition: all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+     -o-transition: all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+        transition: all 560ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+}
+.stitch_fn_blog_list .title_wrapper .abs_img{
+	height: auto;
+	min-height: 100px;
+}
+@media(min-width:769px){
+
+	.stitch_fn_blog_list .blog_item:hover .title_wrapper .title_holder p{
+		color: #bbb;
+	}
+	.stitch_fn_blog_list .blog_item:hover .title_wrapper .b_arrow .stitch_fn_svg,
+	.stitch_fn_blog_list .blog_item:hover .title_wrapper .title_holder h3 a{
+		color: #3062d7;
+	}
+	.stitch_fn_blog_list .blog_item:hover .b_counter{
+		transform: translate3d(0px,0px,0px) scale(0);
+	}
+	.stitch_fn_blog_list .blog_item:hover .blog_item_in{
+		padding-left: 0;
+	}
+	.stitch_fn_blog_list .blog_item:hover .title_wrapper{
+		padding-left: 300px;
+	}
+	.stitch_fn_blog_list .blog_item:hover .title_wrapper .abs_img{
+		width: 240px;
+		top: -49px;
+		bottom: -49px;
+		border-radius: 0;
+	}
+}
+#awards{
+	padding: 10rem 0;
+	background-color:#000;
+}
+
+/*---------------------------------------------------*/
+/*	14) Shortcode: Contact Form
+/*---------------------------------------------------*/
+.stitch_fn_contact_form{
+	width: 100%;
+	float: left;
+	clear: both;
+	margin-top: 2rem;
+	margin-bottom: 133px;
+}
+
+.stitch_fn_contact_form .empty_notice{
+	display: none; 
+    position: relative;
+    width: 100%;
+    float: left;
+    padding: 0 20px;
+    background-color: transparent;
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 60px;
+    border-radius: 5px;
+    border: 2px solid #3062d7;
+    color: #3062d7;
+}
+.stitch_fn_contact_form textarea,
+.stitch_fn_contact_form input[type="email"],
+.stitch_fn_contact_form input[type="text"]{
+	margin: 0;
+	outline-color: transparent;
+	outline-width: 0;
+	box-shadow: none !important;
+	padding: 15px 20px;
+	border-radius: 3px;
+	border:  2px solid rgba(255,255,255,0.05);
+	width: 100%;
+	line-height: 1;
+	font-size: 18px;
+	letter-spacing: 0;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	color: #aab1b8;
+	background-color: transparent;
+	margin-bottom: 40px;
+}
+.stitch_fn_contact_form input[type="email"],
+.stitch_fn_contact_form input[type="text"]{
+	min-height: 60px;
+}
+/*---------------------------------------------------*/
+/*	15) Shortcode: Info List
+/*---------------------------------------------------*/
+.stitch_fn_info_list{
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.stitch_fn_info_list ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	margin-left: -20px;
+}
+.stitch_fn_info_list li{
+	width: 33.3333%;
+	float: left;
+	padding-left: 20px;
+	margin: 10px 0;
+}
+.stitch_fn_info_list li p{
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	color: #aab1b8;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	letter-spacing: 0;
+	font-weight: 400;
+	margin-bottom: 7px;
+}
+.stitch_fn_info_list li h3{
+	font-size: 24px;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 0;
+	font-family: 'Rubik';
+	color: #eee;
+	font-weight: 400;
+}
+.stitch_fn_info_list li h3 a{
+	text-decoration: none;
+	color: inherit;
+}
+.stitch_fn_info_list li h3 a:after{
+	background-color: #eee;
+}
+
+#contact{
+	padding: 4.5rem 0 4.5rem 0;
+	background-color: #000;
+}
+
+input.button-form {
+	line-height:100%;
+	display:block;
+	float:left;
+	padding: 0 37px;
+	border: 2px solid #3062d7;
+	background: none;
+	margin:0;
+	box-shadow:none;
+	color:#3062d7;
+	font-size:1rem;
+	border-radius:2px;
+	text-decoration:none;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	position:relative;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+input.button-form:hover {
+	background: none;
+}
+
+/*---------------------------------------------------*/
+/*	16) Shortcode: Big List
+/*---------------------------------------------------*/
+.stitch_fn_big_text{
+	width: 100%;
+	float: left;
+	clear: both;
+	padding: 12.5rem 0;
+	background: rgb(38,40,44);
+	background: -moz-linear-gradient(0deg, rgba(38,40,44,1) 0%, rgba(0,70,55,1) 100%);
+	background: -webkit-linear-gradient(0deg, rgba(38,40,44,1) 0%, rgba(0,70,55,1) 100%);
+	background: linear-gradient(0deg, rgba(38,40,44,1) 0%, rgba(0,70,55,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#26282c",endColorstr="#004637",GradientType=1);
+}
+.stitch_fn_big_text h3 {
+	margin: 0 0 0.5rem 0;
+	padding: 0;
+	max-width: 745px;
+	font-size: 4rem;
+	line-height: 80px;
+	letter-spacing: -0.25px;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-weight: 700;
+	color: #f1f2f3;
+}
+
+.stitch_fn_big_text h5 {
+	margin: 0;
+	padding: 0;
+	max-width: 745px;
+	font-size: 1.5rem;
+	line-height: 1.25;
+	letter-spacing: -0.25px;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-weight: 500;
+	color: #f1f2f3;
+}
+
+.stitch_fn_big_text a {
+	text-decoration:underline;
+	color:#f1f2f3;
+}
+
+/*---------------------------------------------------*/
+/*	17) To Top
+/*---------------------------------------------------*/
+.stitch_fn_totop{
+	margin: -1rem 0 0 0;
+	padding: 0;
+	position: absolute;
+	top: 50%;
+	width: 2rem;
+	height: 2rem;
+	right: 4rem;
+	cursor: pointer;
+	display: block;
+	border-radius: 0.25rem;
+	background-color:rgba(0,227,178,0.16);
+	-webkit-backdrop-filter: blur(0.5rem);
+	backdrop-filter: blur(0.5rem);
+	transition: all .3s ease;
+}
+.stitch_fn_totop:hover{
+	background-color: rgba(0,227,178,0.4);
+}
+.stitch_fn_totop:after{
+	content: '';
+	position: absolute;
+	width: 7px;
+	height: 1px;
+	height: 1.5px;
+	background-color: #f1f2f3;
+	transform: rotate(45deg);
+	top: 15px;
+	left: 14px;
+}
+.stitch_fn_totop:before{
+	content: '';
+	position: absolute;
+	width: 7px;
+	height: 1px;
+	height: 1.5px;
+	background-color: #f1f2f3;
+	transform: rotate(-45deg);
+	top: 15px;
+	right: 14px;
+}
+/*---------------------------------------------------*/
+/*	18) Footer
+/*---------------------------------------------------*/
+.stitch_fn_footer {
+	width: 100%;
+	float: left;
+	clear: both;
+	padding: 4rem 0;
+	position: relative;
+	background: rgba(29,100,84,1);
+}
+
+.stitch_fn_footer p {
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	font-weight:500;
+	color: #2A9179;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+.stitch_fn_footer a {
+	text-decoration:none;
+	color: #2A9179;
+}
+
+.footer_symbol {
+	height:2rem;
+	width:auto;
+	mix-blend-mode: luminosity;
+	opacity:0.8;
+	margin-bottom:1rem;
+}
+/*---------------------------------------------------*/
+/*	19) Shortcode: Video
+/*---------------------------------------------------*/
+.stitch_fn_video{
+	width: 100%;
+	float: left;
+	clear: both;
+	position: relative;
+	padding: 330px 0;
+	overflow: hidden;
+}
+.stitch_fn_video .jarallax{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.stitch_fn_video .video_holder{
+	width: 100%;
+	float: left;
+	clear: both;
+	position: relative;
+	z-index: 5;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.stitch_fn_video .video_inner{
+	float: left;
+	padding-right: 100px;
+	position: relative;
+}
+.stitch_fn_video .video_inner a{
+	display: block;
+	padding: 40px 80px 40px 90px;
+	text-decoration: none;
+	color: #ebebeb;
+	font-size: 30px;
+	font-family: 'Rubik';
+	line-height: 60px;
+	font-weight: 400;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	background-color: #1e1427;
+	position: relative;
+}
+.stitch_fn_video .video_inner a:after{
+	content: '';
+	position: absolute;
+	right: 100%;
+	top: 0;
+	bottom: 0;
+	width: 4000px;
+	background-color: #1e1427;
+}
+.stitch_fn_video .video_inner:before{
+	content: '';
+	position: absolute;
+	width: 120px;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	background-color: rgba(174,69,255,.1);
+}
+.stitch_fn_video .video_inner .icon{
+	width: 60px;
+	height: 60px;
+	border: 4px solid rgba(255,255,255,.5);
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	left: 0;
+	border-radius: 100%;
+}
+.stitch_fn_video .video_inner .icon:after{
+	border: 8px solid transparent;
+	border-left-width: 14px;
+	position: absolute;
+	content: '';
+	border-left-color: #ebebeb;
+	top: 50%;
+	margin-top: -8px;
+	left: 50%;
+	margin-left: -5px;
+}
+/*---------------------------------------------------*/
+/*	20) Fade Transition for magnific popup
+/*---------------------------------------------------*/
+.mfp-fade.mfp-bg {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+/*---------------------------------------------------*/
+/*	21) Shortcode: Partners
+/*---------------------------------------------------*/
+.stitch_fn_partners,
+.stitch_fn_partners .p_title,
+.stitch_fn_partners .p_list{
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.stitch_fn_partners .p_title h3{
+	margin: 0;
+	padding: 0;
+}
+.stitch_fn_partners .p_title h3{
+	margin: 0;
+    padding: 0;
+    font-size: 30px;
+    line-height: 40px;
+    color: #eee;
+    letter-spacing: 0;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 400;
+    margin-bottom: 45px;
+}
+.stitch_fn_partners .r_item{
+	padding-top: 16px;
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.stitch_fn_partners .flip__wrapper{
+	width: 100%;
+	float: left;
+	clear: both;
+	position: relative;
+	height: 250px;
+	perspective: 1000px; 
+}
+.stitch_fn_partners .flip__front{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 4px solid rgba(255,255,255,.05);
+	border-radius: 5px;
+	padding: 30px 20px;
+}
+.stitch_fn_partners .flip__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.stitch_fn_partners .flip__front,
+.stitch_fn_partners .flip__back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden; /* Safari */
+	backface-visibility: hidden;
+}
+.stitch_fn_partners .flip__back{
+	background-color: #1e1427;
+	transform: rotateY(180deg);
+	border-radius: 5px;
+	overflow: hidden;
+	display: flex;
+	padding: 0 10px;
+	justify-content: center;
+	align-items: center;
+}
+.stitch_fn_partners .flip__back a{
+	position: absolute;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+.stitch_fn_partners .flip__back span{
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	line-height:100%;
+	font-size: 18px;
+	color: #eee;
+	display:flex;
+	flex-direction: row;
+}
+.stitch_fn_partners .flip__back span svg {
+	display:flex;
+}
+
+
+
+.stitch_fn_partners .flip__wrapper:hover .flip__inner{
+  transform: rotateY(180deg);
+}
+
+.stitch_fn_partners .flip__wrapper:hover .r_plus{
+	opacity: 0;
+}
+.stitch_fn_partners .r_plus{
+	width: 64px;
+    height: 64px;
+    display: block;
+    left: 2rem;
+    top: -16px;
+    position: absolute;
+    background-color: #1e1427;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+	transition: all .3s ease;
+}
+
+.stitch_fn_partners .r_plus span{
+	font-size:0.725rem;
+	position:relative;
+	top:1.25rem;
+
+}
+
+.stitch_fn_partners .r_item{
+	opacity: .3;
+	transition: all .5s ease;
+}
+.stitch_fn_partners .r_item.fn_vision{
+	opacity: 1;
+}
+.stitch_fn_partners.ready .swiper-container{
+	overflow: visible;
+}
+.stitch_fn_partners .swiper-wrapper{
+	margin-bottom: 45px;
+}
+#partners{
+	padding: 191px 0 195px 0;
+	overflow-x:hidden;
+	background-color: #000;
+}
+/*---------------------------------------------------*/
+/*	22) Responsive
+/*---------------------------------------------------*/
+/* RESPONSIVE */
+/* TABLET, MOBILE DEVICES */
+@media(max-width: 1460px){
+	.stitch_fn_header{
+		max-width: 1440px;
+		padding: 0 2rem;
+		margin: 0 auto;
+	}
+}
+@media(max-width: 1250px){
+
+	.stitch_fn_hero5 .hero5_in{
+		flex-direction: row;
+	}
+
+	#information{
+		padding: 93px 0 80px 0;
+	}
+	#hero2{
+		padding: 10rem 0;
+	}
+	.stitch_fn_hero4 ul li{
+		width: 50%;
+	}
+	.stitch_fn_hero2 ul li{
+		width: 50%;
+	}
+	.stitch_fn_b2c ul li{
+		width: 50%;
+	}
+	#portfolio{
+		padding: 10rem 0;
+	}
+	#project{
+		padding: 10rem 0;
+	}
+
+	#awards{
+		padding: 10rem 0;
+	}
+	#contact{
+		padding: 10rem 0;
+	}
+	#partners{
+		padding: 10rem 0;
+	}
+}
+
+@media(max-width: 1040px){
+
+	.stitch_fn_footer .container{
+		padding-right: 45px;
+	}
+	.stitch_fn_totop{
+		right: 10px;
+	}
+
+}
+@media(max-width:1104px) {
+	.mobile_only {
+		display: block;
+	}
+}
+@media(max-width: 900px){
+	.stitch_fn_hero5 .hero5_left{
+		width:50%;
+	}
+	.stitch_fn_hero5 .hero5_right{
+		width:50%;
+		display:flex;
+		align-items: center;
+	}
+	.stitch_fn_hero5 .hero5_right .hero5_img {
+	    width:100%;
+		height:100%;
+		padding:0;
+	}
+	.hero5_border {
+		width:120%;
+		height:120%;
+		padding:0;
+	}
+}
+
+@media(max-width: 768px){
+	.stitch_fn_wrapper.opened .stitch_fn_content{
+		padding-right: 0;
+	}
+	.stitch_fn_header{
+		max-width: 100%;
+		padding: 0 1rem;
+		margin: 0 auto;
+	}
+	.nav-menu{
+		display:flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	.btn_page {
+		font-size:0.875rem;
+	}
+
+	.stitch_fn_sidebar_header{
+		width: 100%;
+		right: -100%;
+	}
+	.stitch_fn_hero5 .hero5_left {
+		width: 80%;
+	}
+	.stitch_fn_hero5 .hero5_right {
+		width:20%;
+	}
+	.stitch_fn_hero5 .hero5_right img{
+		display:none;
+	}
+
+	.stitch_fn_hero5 .hero5_in{
+		background-image: url("../img/hero-1-m.png");
+		background-size: contain;
+		width:100%;
+		height:auto;
+		border-radius:1rem;
+	}
+
+	.stitch_fn_info_list li{
+		width: 100%;
+	}
+
+	.stitch_fn_b2c ul li{
+		width: 100%;
+	}
+	.stitch_fn_blog_list .blog_item{
+		padding: 30px 0;
+	}
+	.stitch_fn_blog_list .title_wrapper .b_arrow{display: none;}
+	.stitch_fn_blog_list .title_wrapper{
+		padding-left: 120px;
+		padding-right: 0;
+	}
+	.stitch_fn_blog_list .title_wrapper .abs_img{
+		width: 100px;
+		min-height: 80px;
+	}
+	.stitch_fn_hero4 ul li{
+		width: 100%;
+	}
+	.stitch_fn_hero2 ul li{
+		width: 100%;
+	}
+
+	.stitch_fn_portfolio_grid ul li{
+		width: 100% !important;
+	}
+	.stitch_fn_experience .e_list .e_item span{
+		width: 100%;
+		margin: 2px 0;
+	}
+	.stitch_fn_hero2 .s_item{
+		padding: 4rem 2rem 25rem 2rem;
+	}
+}
+@media(max-width: 640px){
+	.mobile_only {
+		display: block;
+	}
+}
+@media(max-width: 480px){
+	.s_item:hover{
+		background-size:100% auto!important;
+	}
+	.stitch_fn_header .logo img {
+		height:2rem;
+		width:auto;
+	}
+		
+	.nav-btn a{
+		padding:0.5rem 1rem;
+		font-size: 0.875rem;
+		font-weight:bold;
+		border-radius:0.5rem;
+	}
+	
+	.stitch_fn_title h5{
+		margin: 0 0 0.25rem 0;
+		padding: 0;
+		font-size: 1rem;
+	}
+	
+	.stitch_fn_title h3{
+		margin: 0 0 2rem 0;
+		padding: 0;
+		font-size: 2rem;
+	}
+	
+	.stitch_fn_desc p{
+		margin: 0 0 6rem 0;
+		padding: 0;
+		font-size: 1.25rem;
+	}
+	.stitch_fn_hero5 .hero5_menu p{
+		margin:0 0 0.25rem 0;
+
+		font-size:0.875rem;
+	}
+	.stitch_fn_hero5 .hero5_menu a{
+		text-decoration: none;
+		color: #979fb1;
+		font-size: 1rem;
+		line-height: 24px;
+		font-weight:600;
+		font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+		display: block;
+		transition: all .2s ease-in-out;
+		-webkit-transition: all .2s ease-in-out;
+		-moz-transition: all .2s ease-in-out;
+		-o-transition: all .2s ease-in-out;
+		-ms-transition: all .2s ease-in-out;
+	}
+	.stitch_fn_hero5 .hero5_in{
+		background-size:100% auto; 
+	}
+	.stitch_fn_blog_list .title_wrapper .title_holder h3{
+		font-size: 24px;
+	}
+
+	.stitch_fn_hero2 .s_item{
+		padding: 2.5rem 1rem 12.5rem 1rem;
+	}
+}
+
+/*-- Language Switch --*/
+#en {
+	display: none;
+	word-break:keep-all;
+	-webkit-transition: display .4s ease-in-out;
+	-moz-transition: display .4s ease-in-out;
+	-o-transition: display .4s ease-in-out;
+	-ms-transition: display .4s ease-in-out;
+	transition: display .4s ease-in-out;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif!important;
+  }
+
+#kr {
+	display: block;
+	word-break:keep-all;
+	-webkit-transition: display .4s ease-in-out;
+	-moz-transition: display .4s ease-in-out;
+	-o-transition: display .4s ease-in-out;
+	-ms-transition: display .4s ease-in-out;
+	transition: display .4s ease-in-out;
+	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif!important;
+  }
+
+.button_lang {
+	margin:0;
+	padding: 00;
+	color: #7e8692;
+	text-decoration:none!important;
+	font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-size: 0.875rem;
+	letter-spacing: 0;
+	line-height:1;
+	font-weight: 500;
+	cursor: pointer;
+	display: block;
+	-webkit-transition: color .3s ease-in-out;
+	-moz-transition: color .3s ease-in-out;
+	-o-transition: color .3s ease-in-out;
+	-ms-transition: color .3s ease-in-out;
+	transition: color .3s ease-in-out;
+  }
+  .button_lang:hover, .current_lang {
+	color: #dee0e3;
+	-webkit-transition: color .3s ease-in-out;
+	-moz-transition: color .3s ease-in-out;
+	-o-transition: color .3s ease-in-out;
+	-ms-transition: color .3s ease-in-out;
+	transition: color .3s ease-in-out;
+  }
+  
+  ul.language_switch li {
+	width: auto;
+	margin: 0;
+	display: inline;
+  }
+  ul.language_switch{
+	text-align:center;
+	padding: 0.25rem;
+  }
+
+
+  /* ul.language_switch{
+	text-align:center;
+	background-color:rgba(26,57,134,0.2);
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	-webkit-transition: background-color .3s ease-in-out;
+	-moz-transition: background-color .3s ease-in-out;
+	-o-transition: background-color .3s ease-in-out;
+	-ms-transition: background-color .3s ease-in-out;
+	transition: background-color .3s ease-in-out;
+  }
+
+  ul.language_switch:hover{
+	background-color:rgba(26,57,134,0.4);
+	-webkit-transition: background-color .3s ease-in-out;
+	-moz-transition: background-color .3s ease-in-out;
+	-o-transition: background-color .3s ease-in-out;
+	-ms-transition: background-color .3s ease-in-out;
+	transition: background-color .3s ease-in-out;
+  } */
+
+  /*-- Modal.js --*/
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.64);
+	backdrop-filter: blur(0.5rem);
+    z-index: 6;
+	-webkit-transition: backdrop-filter .3s ease-in-out;
+	-moz-transition: backdrop-filter .3s ease-in-out;
+	-o-transition: backdrop-filter .3s ease-in-out;
+	-ms-transition: backdrop-filter .3s ease-in-out;
+	transition: backdrop-filter .3s ease-in-out;
+  }
+  
+  .video-container {
+    text-align: center;
+    /* margin-top: 100px; */
+	z-index: 16;
+
+  }
+  
+  .video-popup {
+    display: none;
+    position: fixed;
+    width: 75%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(14,30,70,0);
+    padding: 0;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.8);
+	-webkit-transition: display .3s ease-in-out;
+	-moz-transition: display .3s ease-in-out;
+	-o-transition: display .3s ease-in-out;
+	-ms-transition: display .3s ease-in-out;
+	transition: display .3s ease-in-out;
+    z-index: 16;
+	border-radius:0.5rem;
+}
+
+	@media screen and (max-width: 768px) {
+  .video-popup {    
+		width: 80%;
+        height: 50%;
+  	}
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-size: 24px;
+    cursor: pointer;
+	display:none;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .cursor{
+	cursor: pointer!important;
+  }
