@@ -16,6 +16,7 @@ html {
 	padding: 0px;
 	margin: 0px;
 	scroll-behavior:smooth;
+	background:rgba(29,100,84,1);
 }
 
 ::selection {
@@ -23,12 +24,17 @@ html {
 }
 
 body {
+	min-height: 100vh;
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;	
 	line-height: 1.25;
 	letter-spacing: -0.25px;
 	word-wrap: break-word;
 	font-weight: 400;
 	color: #979fb1;
+	background: rgb(29,100,84)!important;
+	background: -moz-linear-gradient(0deg, rgba(29,100,84,1) 0%, rgba(28,29,31,1) 4%, rgba(28,29,31,1) 96% rgba(29,100,84,1) 100%)!important;
+	background: -webkit-linear-gradient(0deg, rgba(29,100,84,1) 0%, rgba(28,29,31,1) 4%, rgba(28,29,31,1) 96%, rgba(29,100,84,1) 100%)!important;
+	background: linear-gradient(0deg, rgba(29,100,84,1) 0%, rgba(28,29,31,1) 4%, rgba(28,29,31,1) 96%, rgba(29,100,84,1) 100%)!important;
 }
 
 .color-raon{
@@ -198,7 +204,8 @@ a.stitch_fn_circle_link:hover:after{
 .logo {
 	display:block;
 	padding:0;
-	opacity:0.92;
+	opacity:1;
+	z-index:8;
 	-webkit-transition: opacity .3s ease-in-out;
 	-moz-transition: opacity .3s ease-in-out;
 	-o-transition: opacity .3s ease-in-out;
@@ -206,14 +213,7 @@ a.stitch_fn_circle_link:hover:after{
 	transition: opacity .3s ease-in-out;
 }
 
-.logo:hover {
-	opacity:1;
-	-webkit-transition: opacity .3s ease-in-out;
-	-moz-transition: opacity .3s ease-in-out;
-	-o-transition: opacity .3s ease-in-out;
-	-ms-transition: opacity .3s ease-in-out;
-	transition: opacity .3s ease-in-out;
-}
+
 
 .stitch_fn_sidebar_header .menu_logo{
 	padding: 60px;
@@ -430,7 +430,7 @@ a.stitch_fn_circle_link:hover:after{
 .btn_page {
 	margin:0;
 	padding:0;
-	color: #979fb1;
+	color: rgba(255,255,255,0.4);
 	text-decoration:none!important;
 	font-size: 1.25rem;
 	letter-spacing: 0;
@@ -579,6 +579,7 @@ a.stitch_fn_circle_link:hover:after{
 #hero1 {
 	margin:5rem 0 0 0;
 	padding: 7.5rem 0 5rem 0;
+	background-color:none;
 	/* background: rgb(28,29,31,1);
 	background: linear-gradient(0deg, rgba(28,29,31,1) 0%, rgba(29,100,84,1) 100%); */
 	background: url(../img/hero-1.png);
@@ -901,12 +902,19 @@ a.stitch_fn_circle_link:hover:after{
 /*---------------------------------------------------*/
 /*	04) Shortcode: Divider
 /*---------------------------------------------------*/
+#divider {
+	width:100%;
+	background-color:rgba(28,29,31,1);
+
+}
 .stitch_fn_divider{
-	margin: 4rem 0;
+	margin: 4rem 0 0 0;
+	padding: 0 0 5rem 0;
 	width: 100%;
 	position: relative;
 	height: 1px;
-	background-color: #14463a;
+	border-bottom: solid 1px #2B2D32;
+	background-color:rgba(28,29,31,1);
 	float: left;
 	clear: both;
 }
@@ -2440,13 +2448,11 @@ input.button-form:hover {
 /*	17) To Top
 /*---------------------------------------------------*/
 .stitch_fn_totop{
-	margin: -1rem 0 0 0;
+	margin: 0;
 	padding: 0;
-	position: absolute;
-	top: 50%;
+	position: relative;
 	width: 2rem;
 	height: 2rem;
-	right: 4rem;
 	cursor: pointer;
 	display: block;
 	border-radius: 0.25rem;
@@ -2492,6 +2498,26 @@ input.button-form:hover {
 	background: rgba(29,100,84,1);
 }
 
+.footer_in {
+	display:flex;
+	flex-direction:row;
+	align-content: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.footer_desc_left {
+
+}
+
+.footer_desc_right {
+	display:flex;
+	flex-direction:row;
+	align-content:center;
+	align-items:center;
+	justify-content: flex-end;
+}
+
 .stitch_fn_footer p {
 	margin: 0;
 	padding: 0;
@@ -2504,6 +2530,22 @@ input.button-form:hover {
 .stitch_fn_footer a {
 	text-decoration:none;
 	color: #2A9179;
+}
+
+.footer_desc_right a {
+	margin: 0 0 0 1rem;
+	padding: 0.25rem;
+	text-decoration:none;
+	font-size:1rem;
+	font-weight:700;
+	color: rgba(255,255,255,0.4);
+	transition: all 0.3s ease-in-out;
+
+}
+
+.footer_desc_right a:hover {
+	color: rgba(255,255,255,0.8);
+	transition: all 0.3s ease-in-out;
 }
 
 .footer_symbol {
@@ -2801,13 +2843,6 @@ input.button-form:hover {
 
 	.stitch_fn_hero1 .hero1_left {
 		width: 50%;
-	}
-
-	.stitch_fn_footer .container{
-		padding-right: 45px;
-	}
-	.stitch_fn_totop{
-		right: 1rem;
 	}
 
 }
@@ -3154,3 +3189,55 @@ input.button-form:hover {
   .cursor{
 	cursor: pointer!important;
   }
+
+
+
+
+  /*---------------------------------------------------*/
+/*	14) Shortcode: Contact Form
+/*---------------------------------------------------*/
+.awilo_fn_contact_form{
+	width: 100%;
+	float: left;
+	clear: both;
+	margin-top: 130px;
+	margin-bottom: 133px;
+}
+
+.awilo_fn_contact_form .empty_notice{
+	display: none; 
+    position: relative;
+    width: 100%;
+    float: left;
+    padding: 0 20px;
+    background-color: transparent;
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 60px;
+    border-radius: 5px;
+    border: 2px solid #ff214f24;
+    color: #ff214f;
+}
+.awilo_fn_contact_form textarea,
+.awilo_fn_contact_form input[type="email"],
+.awilo_fn_contact_form input[type="text"]{
+	margin: 0;
+	outline-color: transparent;
+	outline-width: 0;
+	box-shadow: none !important;
+	padding: 15px 20px;
+	border-radius: 3px;
+	border:  2px solid rgba(255,255,255,0.05);
+	width: 100%;
+	line-height: 1;
+	font-size: 18px;
+	letter-spacing: 0;
+	font-family: 'Muli';
+	color: #777;
+	background-color: transparent;
+	margin-bottom: 40px;
+}
+.awilo_fn_contact_form input[type="email"],
+.awilo_fn_contact_form input[type="text"]{
+	min-height: 60px;
+}
