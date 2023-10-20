@@ -52,7 +52,7 @@
 
 
 
-<body style="background: rgb(29,100,84,1)!important;">
+<body>
 
 <!-- wrapper all -->
 <div class="stitch_fn_wrapper">
@@ -61,8 +61,8 @@
 	<div class="stitch_fn_nav">
 		<div class="container wide">
 			<div class="stitch_fn_header">
-				<a class="logo" href="index.html">
-					<img src="img/logo-stitchstudio-2023-primary.svg" alt="Stitch Studio Logo"/>
+				<a class="logo" href="#" onclick="location.href='index.html'">
+					<i class="bi bi-arrow-left-short"></i><p>뒤로 가기</p>
 				</a>
 				<ul class="nav-menu">					
 					<!-- <li><a class="btn_page" href="">서비스</a></li>
@@ -87,20 +87,10 @@
 	<div class="stitch_fn_content">
 		<section id="contact">
 			<div class="container wide">
-			<!-- Section: Contact -->
-		<section id="contact">
-			<div class="container wide">
-				
-				
-				<!-- Shortcode: Title with Description -->
-				<div class="awilo_fn_title">
-					<h5>Contact</h5>
-					<h3>Get in touch with me</h3>
+				<div class="stitch_fn_title">
+					<h5 class="color-stitchgreen" id="kr">스티치 스튜디오 문의</h5>
+					<h3 id="kr">문의하기</h3>
 				</div>
-				<!-- /Shortcode: Title with Description -->
-			
-			
-				
 				<!-- Shortcode: Contact Form -->
 				<div class="awilo_fn_contact_form">
 					<form action="/" method="post" class="contact_form" id="contact_form">
@@ -111,21 +101,19 @@
 						<!-- /RETURN MESSAGES -->
 
 						<div class="your-name">
-							<input class="name" type="text" placeholder="Name"/>
+							<input class="name" type="text" placeholder="이름"/>
 						</div>
 						<div class="your-email">
-							<input class="email" type="text" placeholder="Email"/>
+							<input class="email" type="text" placeholder="이메일 주소"/>
 						</div>
 						<div class="your-messagse">
-							<textarea class="message" placeholder="Message" cols="3" rows="8"></textarea>
+							<textarea class="message" placeholder="메시지" cols="3" rows="8"></textarea>
 						</div>
-						<div class="button">
-							<a href="#" class="awilo_fn_main_button awilo_fn_contact_sendbtn">
-								<span>Send Message</span>
-								<span>Send Message</span>
-							</a>
+						<div class="action_contact">
+						<a class="btn_contact" href="">
+								<span>문의 전송</span>
+						</a>
 						</div>
-
 					</form>
 				</div>
 				<!-- /Shortcode: Contact Form -->
@@ -274,50 +262,50 @@
 <script src="js/init.js"></script>
 
 <script type="text/javascript">
-var english = document.getElementById('en_click'),
-    korean = document.getElementById('kr_click'),
-    en_txt = document.querySelectorAll('#en'),
-    kr_txt = document.querySelectorAll('#kr'),
-    nb_en = en_txt.length,
-    nb_kr = kr_txt.length;
+// var english = document.getElementById('en_click'),
+//     korean = document.getElementById('kr_click'),
+//     en_txt = document.querySelectorAll('#en'),
+//     kr_txt = document.querySelectorAll('#kr'),
+//     nb_en = en_txt.length,
+//     nb_kr = kr_txt.length;
 
-english.addEventListener('click', function() {
-    langue(english,korean);
-}, false);
+// english.addEventListener('click', function() {
+//     langue(english,korean);
+// }, false);
 
-korean.addEventListener('click', function() {
-    langue(korean,english);
-}, false);
+// korean.addEventListener('click', function() {
+//     langue(korean,english);
+// }, false);
 
-function langue(langueOn,langueOff){
-    if (!langueOn.classList.contains('current_lang')) {
-        langueOn.classList.toggle('current_lang');
-        langueOff.classList.toggle('current_lang');
-    }
-    if(langueOn.innerHTML == 'En'){
-        afficher(en_txt, nb_en);
-        cacher(kr_txt, nb_kr);
-    }
-    else if(langueOn.innerHTML == 'Kr'){
-        afficher(kr_txt, nb_kr);
-        cacher(en_txt, nb_en);
-    }
-}
+// function langue(langueOn,langueOff){
+//     if (!langueOn.classList.contains('current_lang')) {
+//         langueOn.classList.toggle('current_lang');
+//         langueOff.classList.toggle('current_lang');
+//     }
+//     if(langueOn.innerHTML == 'En'){
+//         afficher(en_txt, nb_en);
+//         cacher(kr_txt, nb_kr);
+//     }
+//     else if(langueOn.innerHTML == 'Kr'){
+//         afficher(kr_txt, nb_kr);
+//         cacher(en_txt, nb_en);
+//     }
+// }
 
-function afficher(txt,nb){
-    for(var i=0; i < nb; i++){
-        txt[i].style.display = 'block';
-    }
-}
-function cacher(txt,nb){
-    for(var i=0; i < nb; i++){
-        txt[i].style.display = 'none';
-    }
-}
-function init(){
-    langue(korean,english);
-}
-init();
+// function afficher(txt,nb){
+//     for(var i=0; i < nb; i++){
+//         txt[i].style.display = 'block';
+//     }
+// }
+// function cacher(txt,nb){
+//     for(var i=0; i < nb; i++){
+//         txt[i].style.display = 'none';
+//     }
+// }
+// function init(){
+//     langue(korean,english);
+// }
+// init();
 </script>
 
 <script src="js/modal.js"></script>
